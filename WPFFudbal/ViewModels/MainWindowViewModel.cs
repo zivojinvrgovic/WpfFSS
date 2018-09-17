@@ -72,6 +72,8 @@ namespace WPFFudbal.ViewModels
         #endregion
 
         #region Commands
+        
+        //Command for adding new igrac
 
         private ICommand addNewIgrac;
         public ICommand AddNewIgrac
