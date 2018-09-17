@@ -29,6 +29,7 @@ namespace WPFFudbal.ViewModels
             using (Service1Client wcf = new Service1Client())
             {
                 IgracList = wcf.IgracList().ToList();
+                //show list
             }
 
         }
