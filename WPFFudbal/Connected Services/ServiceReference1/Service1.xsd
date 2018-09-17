@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfvwIgrac">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwIgrac" nillable="true" type="tns:vwIgrac" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwIgrac" nillable="true" type="tns:ArrayOfvwIgrac" />
+  <xs:complexType name="vwIgrac">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="datum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nacionalnost" type="xs:int" />
+      <xs:element minOccurs="0" name="nazNac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nazTim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prezime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tim" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwIgrac" nillable="true" type="tns:vwIgrac" />
+  <xs:complexType name="ArrayOfvwTim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwTim" nillable="true" type="tns:vwTim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwTim" nillable="true" type="tns:ArrayOfvwTim" />
+  <xs:complexType name="vwTim">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="liga" type="xs:int" />
+      <xs:element minOccurs="0" name="nazLige" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="osnovan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sediste" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwTim" nillable="true" type="tns:vwTim" />
+  <xs:complexType name="ArrayOfvwLiga">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwLiga" nillable="true" type="tns:vwLiga" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwLiga" nillable="true" type="tns:ArrayOfvwLiga" />
+  <xs:complexType name="vwLiga">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="nazKat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="oznaka" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rang" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwLiga" nillable="true" type="tns:vwLiga" />
+  <xs:complexType name="ArrayOfvwKategorija">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwKategorija" nillable="true" type="tns:vwKategorija" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwKategorija" nillable="true" type="tns:ArrayOfvwKategorija" />
+  <xs:complexType name="vwKategorija">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="rang" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwKategorija" nillable="true" type="tns:vwKategorija" />
+  <xs:complexType name="ArrayOfvwNacionalnost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwNacionalnost" nillable="true" type="tns:vwNacionalnost" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwNacionalnost" nillable="true" type="tns:ArrayOfvwNacionalnost" />
+  <xs:complexType name="vwNacionalnost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="Expr2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expr3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="skracenica" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwNacionalnost" nillable="true" type="tns:vwNacionalnost" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+</xs:schema>

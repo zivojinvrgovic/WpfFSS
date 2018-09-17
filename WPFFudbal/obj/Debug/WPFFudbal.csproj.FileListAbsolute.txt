@@ -1,0 +1,17 @@
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\bin\Debug\WPFFudbal.exe.config
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\bin\Debug\WPFFudbal.exe
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\bin\Debug\WPFFudbal.pdb
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal.csprojAssemblyReference.cache
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\MainWindow.g.cs
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\App.g.cs
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal_MarkupCompile.cache
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal_MarkupCompile.lref
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\MainWindow.baml
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal.g.resources
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal.Properties.Resources.resources
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal.csproj.GenerateResource.cache
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal.csproj.CoreCompileInputs.cache
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal.exe
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\WPFFudbal.pdb
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\AddIgrac.g.cs
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WPFFudbal\obj\Debug\AddIgrac.baml

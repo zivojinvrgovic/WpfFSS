@@ -1,0 +1,84 @@
+﻿<Window x:Class="WPFFudbal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFFudbal"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="0" />
+            <ColumnDefinition Width="auto" MinWidth="6" />
+            <ColumnDefinition Width="0" />
+            <ColumnDefinition Width="auto" MinWidth="6" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="9.731" />
+            <ColumnDefinition Width="11.269"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+    
+
+    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="0,0.2,0,7" Grid.RowSpan="2">
+            <Button Width="160" Height="30" Name="btnManageCashRegister" Content="Manage igrac" 
+                    Command="{Binding ManageIgrac}" Margin="4" FontWeight="Bold"/>
+            <Button Width="160" Height="30" Name="btnManageManufacturer" Content="Manage tim"                 
+                    Command="{Binding ManageTim}" FontWeight="Bold"/>
+            <Button Width="160" Height="30" Name="btnManage" Content="Manage liga"                 
+                    Command="{Binding ManageLiga}" FontWeight="Bold"/>
+        </StackPanel>
+
+
+        <Grid Grid.Column="3" Grid.Row="1" Height="auto" Width="auto">
+            <DataGrid Name="DataGridIgrac" ItemsSource="{Binding IgracList,UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Igrac,UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True"
+                     
+                      HeadersVisibility="Column"
+                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" BorderBrush="Black"
+                      Foreground="Black" FontWeight="Bold" Margin="0,0,161,-176">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Ime" Binding="{Binding ime}"/>
+                    <DataGridTextColumn Header="Prezime" Binding="{Binding prezime}"/>
+                    <DataGridTextColumn Header="Nacionalnost" Binding="{Binding nazNac}"/>
+                    <DataGridTextColumn Header="Tim" Binding="{Binding nazTim}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <StackPanel Grid.Column="5" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="6,0.2,0.4,7" Grid.RowSpan="2">
+            <Button Width="120" Height="30" Name="btnAddCashRegister" Content="Add igrac"                   
+                    Command="{Binding AddNewIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="4" BorderThickness="2"/>
+            <Button Width="120" Height="30" Name="btnEditCashRegister" Content="Edit igrac  " 
+                    Visibility="{Binding ViewIgrac, UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding EditIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="4" BorderThickness="2"/>
+            <Button Width="120" Height="30" Name="btnDeleteCashRegister" Content="Delete igrac "
+                    Visibility="{Binding ViewIgrac, UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding DeleteIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="4" BorderThickness="2"/>
+        </StackPanel>
+    </Grid>
+</Window>

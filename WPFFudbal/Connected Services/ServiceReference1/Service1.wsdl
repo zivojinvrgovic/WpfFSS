@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53298/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53298/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53298/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_IgracList_InputMessage">
+    <wsdl:part name="parameters" element="tns:IgracList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IgracList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IgracListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TimList_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TimList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LigaList_InputMessage">
+    <wsdl:part name="parameters" element="tns:LigaList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LigaList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LigaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KategorijaList_InputMessage">
+    <wsdl:part name="parameters" element="tns:KategorijaList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KategorijaList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KategorijaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NacionalnostList_InputMessage">
+    <wsdl:part name="parameters" element="tns:NacionalnostList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NacionalnostList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NacionalnostListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IgracAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:IgracAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IgracAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IgracAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TimAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TimAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LigaAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:LigaAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LigaAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LigaAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KategorijaAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:KategorijaAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KategorijaAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KategorijaAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NacionalnostAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:NacionalnostAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NacionalnostAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NacionalnostAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IgracBrisanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:IgracBrisanje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IgracBrisanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IgracBrisanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TimBrisanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimBrisanje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TimBrisanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimBrisanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KategorijaBrisanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:KategorijaBrisanje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KategorijaBrisanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KategorijaBrisanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NacionalnostBrisanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:NacionalnostBrisanje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NacionalnostBrisanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NacionalnostBrisanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LigaBrisanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:LigaBrisanje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LigaBrisanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LigaBrisanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneIgrac_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneIgrac" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneIgrac_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneIgracResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneKategorija_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneKategorija" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneKategorija_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneKategorijaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneliga_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneliga" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneliga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneligaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneNacionalnost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneNacionalnost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneNacionalnost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneNacionalnostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneTim_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneTim" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneTim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneTimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="IgracList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IgracList" message="tns:IService1_IgracList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IgracListResponse" message="tns:IService1_IgracList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TimList" message="tns:IService1_TimList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimListResponse" message="tns:IService1_TimList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LigaList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LigaList" message="tns:IService1_LigaList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LigaListResponse" message="tns:IService1_LigaList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KategorijaList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/KategorijaList" message="tns:IService1_KategorijaList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KategorijaListResponse" message="tns:IService1_KategorijaList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NacionalnostList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NacionalnostList" message="tns:IService1_NacionalnostList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NacionalnostListResponse" message="tns:IService1_NacionalnostList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IgracAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IgracAdd" message="tns:IService1_IgracAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IgracAddResponse" message="tns:IService1_IgracAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TimAdd" message="tns:IService1_TimAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimAddResponse" message="tns:IService1_TimAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LigaAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LigaAdd" message="tns:IService1_LigaAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LigaAddResponse" message="tns:IService1_LigaAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KategorijaAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/KategorijaAdd" message="tns:IService1_KategorijaAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KategorijaAddResponse" message="tns:IService1_KategorijaAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NacionalnostAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NacionalnostAdd" message="tns:IService1_NacionalnostAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NacionalnostAddResponse" message="tns:IService1_NacionalnostAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IgracBrisanje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IgracBrisanje" message="tns:IService1_IgracBrisanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IgracBrisanjeResponse" message="tns:IService1_IgracBrisanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimBrisanje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TimBrisanje" message="tns:IService1_TimBrisanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimBrisanjeResponse" message="tns:IService1_TimBrisanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KategorijaBrisanje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/KategorijaBrisanje" message="tns:IService1_KategorijaBrisanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KategorijaBrisanjeResponse" message="tns:IService1_KategorijaBrisanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NacionalnostBrisanje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NacionalnostBrisanje" message="tns:IService1_NacionalnostBrisanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NacionalnostBrisanjeResponse" message="tns:IService1_NacionalnostBrisanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LigaBrisanje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LigaBrisanje" message="tns:IService1_LigaBrisanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LigaBrisanjeResponse" message="tns:IService1_LigaBrisanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneIgrac">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneIgrac" message="tns:IService1_GetOneIgrac_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneIgracResponse" message="tns:IService1_GetOneIgrac_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneKategorija">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneKategorija" message="tns:IService1_GetOneKategorija_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneKategorijaResponse" message="tns:IService1_GetOneKategorija_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneliga">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneliga" message="tns:IService1_GetOneliga_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneligaResponse" message="tns:IService1_GetOneliga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneNacionalnost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneNacionalnost" message="tns:IService1_GetOneNacionalnost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneNacionalnostResponse" message="tns:IService1_GetOneNacionalnost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneTim">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneTim" message="tns:IService1_GetOneTim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneTimResponse" message="tns:IService1_GetOneTim_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IgracList">
+      <soap:operation soapAction="http://tempuri.org/IService1/IgracList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimList">
+      <soap:operation soapAction="http://tempuri.org/IService1/TimList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LigaList">
+      <soap:operation soapAction="http://tempuri.org/IService1/LigaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KategorijaList">
+      <soap:operation soapAction="http://tempuri.org/IService1/KategorijaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NacionalnostList">
+      <soap:operation soapAction="http://tempuri.org/IService1/NacionalnostList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IgracAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/IgracAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/TimAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LigaAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/LigaAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KategorijaAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/KategorijaAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NacionalnostAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/NacionalnostAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IgracBrisanje">
+      <soap:operation soapAction="http://tempuri.org/IService1/IgracBrisanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimBrisanje">
+      <soap:operation soapAction="http://tempuri.org/IService1/TimBrisanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KategorijaBrisanje">
+      <soap:operation soapAction="http://tempuri.org/IService1/KategorijaBrisanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NacionalnostBrisanje">
+      <soap:operation soapAction="http://tempuri.org/IService1/NacionalnostBrisanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LigaBrisanje">
+      <soap:operation soapAction="http://tempuri.org/IService1/LigaBrisanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneIgrac">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOneIgrac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneKategorija">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOneKategorija" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneliga">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOneliga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneNacionalnost">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOneNacionalnost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneTim">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOneTim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:53298/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

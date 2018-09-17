@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FSSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblIgrac">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="datum" Type="varchar" MaxLength="50" />
+    <Property Name="tim" Type="int" Nullable="false" />
+    <Property Name="nacionalnost" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblKategorija">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rang" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLiga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="oznaka" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="rang" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblNacionalnost">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="skracenica" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblTim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sediste" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="osnovan" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="liga" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwIgrac' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwIgrac">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ime" />
+      <PropertyRef Name="prezime" />
+      <PropertyRef Name="tim" />
+      <PropertyRef Name="nacionalnost" />
+      <PropertyRef Name="nazNac" />
+      <PropertyRef Name="nazTim" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="datum" Type="varchar" MaxLength="50" />
+    <Property Name="tim" Type="int" Nullable="false" />
+    <Property Name="nacionalnost" Type="int" Nullable="false" />
+    <Property Name="nazNac" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nazTim" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwKategorija' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwKategorija">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="rang" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="rang" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwLiga' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwLiga">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="naziv" />
+      <PropertyRef Name="oznaka" />
+      <PropertyRef Name="rang" />
+      <PropertyRef Name="nazKat" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="oznaka" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="rang" Type="int" Nullable="false" />
+    <Property Name="nazKat" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwNacionalnost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwNacionalnost">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="naziv" />
+      <PropertyRef Name="skracenica" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Expr3" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="skracenica" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expr3" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwTim">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="naziv" />
+      <PropertyRef Name="sediste" />
+      <PropertyRef Name="osnovan" />
+      <PropertyRef Name="liga" />
+      <PropertyRef Name="nazLige" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sediste" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="osnovan" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="liga" Type="int" Nullable="false" />
+    <Property Name="nazLige" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblIgrac_tblNacionalnost">
+    <End Role="tblNacionalnost" Type="Self.tblNacionalnost" Multiplicity="1" />
+    <End Role="tblIgrac" Type="Self.tblIgrac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNacionalnost">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblIgrac">
+        <PropertyRef Name="nacionalnost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblIgrac_tblTim">
+    <End Role="tblTim" Type="Self.tblTim" Multiplicity="1" />
+    <End Role="tblIgrac" Type="Self.tblIgrac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTim">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblIgrac">
+        <PropertyRef Name="tim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLiga_tblKategorija">
+    <End Role="tblKategorija" Type="Self.tblKategorija" Multiplicity="1" />
+    <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblKategorija">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblLiga">
+        <PropertyRef Name="rang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTim_tblLiga">
+    <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="1" />
+    <End Role="tblTim" Type="Self.tblTim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLiga">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblTim">
+        <PropertyRef Name="liga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FSSModelStoreContainer">
+    <EntitySet Name="tblIgrac" EntityType="Self.tblIgrac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblKategorija" EntityType="Self.tblKategorija" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLiga" EntityType="Self.tblLiga" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNacionalnost" EntityType="Self.tblNacionalnost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTim" EntityType="Self.tblTim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwIgrac" EntityType="Self.vwIgrac" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwIgrac].[ID] AS [ID], 
+    [vwIgrac].[ime] AS [ime], 
+    [vwIgrac].[prezime] AS [prezime], 
+    [vwIgrac].[datum] AS [datum], 
+    [vwIgrac].[tim] AS [tim], 
+    [vwIgrac].[nacionalnost] AS [nacionalnost], 
+    [vwIgrac].[nazNac] AS [nazNac], 
+    [vwIgrac].[nazTim] AS [nazTim]
+    FROM [dbo].[vwIgrac] AS [vwIgrac]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwKategorija" EntityType="Self.vwKategorija" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwKategorija].[ID] AS [ID], 
+    [vwKategorija].[rang] AS [rang], 
+    [vwKategorija].[Expr1] AS [Expr1], 
+    [vwKategorija].[Expr2] AS [Expr2]
+    FROM [dbo].[vwKategorija] AS [vwKategorija]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwLiga" EntityType="Self.vwLiga" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwLiga].[ID] AS [ID], 
+    [vwLiga].[naziv] AS [naziv], 
+    [vwLiga].[oznaka] AS [oznaka], 
+    [vwLiga].[rang] AS [rang], 
+    [vwLiga].[nazKat] AS [nazKat]
+    FROM [dbo].[vwLiga] AS [vwLiga]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwNacionalnost" EntityType="Self.vwNacionalnost" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwNacionalnost].[ID] AS [ID], 
+    [vwNacionalnost].[naziv] AS [naziv], 
+    [vwNacionalnost].[skracenica] AS [skracenica], 
+    [vwNacionalnost].[Expr1] AS [Expr1], 
+    [vwNacionalnost].[Expr2] AS [Expr2], 
+    [vwNacionalnost].[Expr3] AS [Expr3]
+    FROM [dbo].[vwNacionalnost] AS [vwNacionalnost]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwTim" EntityType="Self.vwTim" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwTim].[ID] AS [ID], 
+    [vwTim].[naziv] AS [naziv], 
+    [vwTim].[sediste] AS [sediste], 
+    [vwTim].[osnovan] AS [osnovan], 
+    [vwTim].[liga] AS [liga], 
+    [vwTim].[nazLige] AS [nazLige]
+    FROM [dbo].[vwTim] AS [vwTim]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_tblIgrac_tblNacionalnost" Association="Self.FK_tblIgrac_tblNacionalnost">
+      <End Role="tblNacionalnost" EntitySet="tblNacionalnost" />
+      <End Role="tblIgrac" EntitySet="tblIgrac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblIgrac_tblTim" Association="Self.FK_tblIgrac_tblTim">
+      <End Role="tblTim" EntitySet="tblTim" />
+      <End Role="tblIgrac" EntitySet="tblIgrac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLiga_tblKategorija" Association="Self.FK_tblLiga_tblKategorija">
+      <End Role="tblKategorija" EntitySet="tblKategorija" />
+      <End Role="tblLiga" EntitySet="tblLiga" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTim_tblLiga" Association="Self.FK_tblTim_tblLiga">
+      <End Role="tblLiga" EntitySet="tblLiga" />
+      <End Role="tblTim" EntitySet="tblTim" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

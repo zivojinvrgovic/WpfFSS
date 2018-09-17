@@ -1,0 +1,12 @@
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\bin\WCFSERVICEFSS.dll.config
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\bin\WCFSERVICEFSS.dll
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\bin\WCFSERVICEFSS.pdb
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\obj\Debug\WCFSERVICEFSS.csproj.CoreCompileInputs.cache
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\obj\Debug\WCFSERVICEFSS.dll
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\obj\Debug\WCFSERVICEFSS.pdb
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\bin\EntityFramework.dll
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\bin\EntityFramework.SqlServer.dll
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\bin\EntityFramework.xml
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\bin\EntityFramework.SqlServer.xml
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\obj\Debug\WCFSERVICEFSS.csproj.CopyComplete
+C:\Users\ZIKS\source\repos\WCFSERVICEFSS\WCFSERVICEFSS\obj\Debug\WCFSERVICEFSS.csprojAssemblyReference.cache

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FSSModelStoreContainer" CdmEntityContainer="FSSEntities">
+    <EntitySetMapping Name="tblIgracs">
+      <EntityTypeMapping TypeName="FSSModel.tblIgrac">
+        <MappingFragment StoreEntitySet="tblIgrac">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="tim" ColumnName="tim" />
+          <ScalarProperty Name="nacionalnost" ColumnName="nacionalnost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblKategorijas">
+      <EntityTypeMapping TypeName="FSSModel.tblKategorija">
+        <MappingFragment StoreEntitySet="tblKategorija">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="rang" ColumnName="rang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLigas">
+      <EntityTypeMapping TypeName="FSSModel.tblLiga">
+        <MappingFragment StoreEntitySet="tblLiga">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="rang" ColumnName="rang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNacionalnosts">
+      <EntityTypeMapping TypeName="FSSModel.tblNacionalnost">
+        <MappingFragment StoreEntitySet="tblNacionalnost">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="skracenica" ColumnName="skracenica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTims">
+      <EntityTypeMapping TypeName="FSSModel.tblTim">
+        <MappingFragment StoreEntitySet="tblTim">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="sediste" ColumnName="sediste" />
+          <ScalarProperty Name="osnovan" ColumnName="osnovan" />
+          <ScalarProperty Name="liga" ColumnName="liga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwIgracs">
+      <EntityTypeMapping TypeName="FSSModel.vwIgrac">
+        <MappingFragment StoreEntitySet="vwIgrac">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="tim" ColumnName="tim" />
+          <ScalarProperty Name="nacionalnost" ColumnName="nacionalnost" />
+          <ScalarProperty Name="nazNac" ColumnName="nazNac" />
+          <ScalarProperty Name="nazTim" ColumnName="nazTim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwKategorijas">
+      <EntityTypeMapping TypeName="FSSModel.vwKategorija">
+        <MappingFragment StoreEntitySet="vwKategorija">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="rang" ColumnName="rang" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwLigas">
+      <EntityTypeMapping TypeName="FSSModel.vwLiga">
+        <MappingFragment StoreEntitySet="vwLiga">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="rang" ColumnName="rang" />
+          <ScalarProperty Name="nazKat" ColumnName="nazKat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwNacionalnosts">
+      <EntityTypeMapping TypeName="FSSModel.vwNacionalnost">
+        <MappingFragment StoreEntitySet="vwNacionalnost">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="skracenica" ColumnName="skracenica" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwTims">
+      <EntityTypeMapping TypeName="FSSModel.vwTim">
+        <MappingFragment StoreEntitySet="vwTim">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="sediste" ColumnName="sediste" />
+          <ScalarProperty Name="osnovan" ColumnName="osnovan" />
+          <ScalarProperty Name="liga" ColumnName="liga" />
+          <ScalarProperty Name="nazLige" ColumnName="nazLige" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FSSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblIgrac">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tim" Type="Int32" Nullable="false" />
+    <Property Name="nacionalnost" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblNacionalnost" Relationship="Self.FK_tblIgrac_tblNacionalnost" FromRole="tblIgrac" ToRole="tblNacionalnost" />
+    <NavigationProperty Name="tblTim" Relationship="Self.FK_tblIgrac_tblTim" FromRole="tblIgrac" ToRole="tblTim" />
+  </EntityType>
+  <EntityType Name="tblKategorija">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblLigas" Relationship="Self.FK_tblLiga_tblKategorija" FromRole="tblKategorija" ToRole="tblLiga" />
+  </EntityType>
+  <EntityType Name="tblLiga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="oznaka" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rang" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblKategorija" Relationship="Self.FK_tblLiga_tblKategorija" FromRole="tblLiga" ToRole="tblKategorija" />
+    <NavigationProperty Name="tblTims" Relationship="Self.FK_tblTim_tblLiga" FromRole="tblLiga" ToRole="tblTim" />
+  </EntityType>
+  <EntityType Name="tblNacionalnost">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="skracenica" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblIgracs" Relationship="Self.FK_tblIgrac_tblNacionalnost" FromRole="tblNacionalnost" ToRole="tblIgrac" />
+  </EntityType>
+  <EntityType Name="tblTim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sediste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="osnovan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="liga" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblIgracs" Relationship="Self.FK_tblIgrac_tblTim" FromRole="tblTim" ToRole="tblIgrac" />
+    <NavigationProperty Name="tblLiga" Relationship="Self.FK_tblTim_tblLiga" FromRole="tblTim" ToRole="tblLiga" />
+  </EntityType>
+  <EntityType Name="vwIgrac">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ime" />
+      <PropertyRef Name="prezime" />
+      <PropertyRef Name="tim" />
+      <PropertyRef Name="nacionalnost" />
+      <PropertyRef Name="nazNac" />
+      <PropertyRef Name="nazTim" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tim" Type="Int32" Nullable="false" />
+    <Property Name="nacionalnost" Type="Int32" Nullable="false" />
+    <Property Name="nazNac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nazTim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwKategorija">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="rang" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="rang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="Expr2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwLiga">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="naziv" />
+      <PropertyRef Name="oznaka" />
+      <PropertyRef Name="rang" />
+      <PropertyRef Name="nazKat" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="oznaka" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rang" Type="Int32" Nullable="false" />
+    <Property Name="nazKat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwNacionalnost">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="naziv" />
+      <PropertyRef Name="skracenica" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Expr3" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="skracenica" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="Expr2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Expr3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwTim">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="naziv" />
+      <PropertyRef Name="sediste" />
+      <PropertyRef Name="osnovan" />
+      <PropertyRef Name="liga" />
+      <PropertyRef Name="nazLige" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sediste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="osnovan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="liga" Type="Int32" Nullable="false" />
+    <Property Name="nazLige" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblIgrac_tblNacionalnost">
+    <End Role="tblNacionalnost" Type="Self.tblNacionalnost" Multiplicity="1" />
+    <End Role="tblIgrac" Type="Self.tblIgrac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNacionalnost">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblIgrac">
+        <PropertyRef Name="nacionalnost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblIgrac_tblTim">
+    <End Role="tblTim" Type="Self.tblTim" Multiplicity="1" />
+    <End Role="tblIgrac" Type="Self.tblIgrac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTim">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblIgrac">
+        <PropertyRef Name="tim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLiga_tblKategorija">
+    <End Role="tblKategorija" Type="Self.tblKategorija" Multiplicity="1" />
+    <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblKategorija">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblLiga">
+        <PropertyRef Name="rang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTim_tblLiga">
+    <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="1" />
+    <End Role="tblTim" Type="Self.tblTim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLiga">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblTim">
+        <PropertyRef Name="liga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FSSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblIgracs" EntityType="Self.tblIgrac" />
+    <EntitySet Name="tblKategorijas" EntityType="Self.tblKategorija" />
+    <EntitySet Name="tblLigas" EntityType="Self.tblLiga" />
+    <EntitySet Name="tblNacionalnosts" EntityType="Self.tblNacionalnost" />
+    <EntitySet Name="tblTims" EntityType="Self.tblTim" />
+    <EntitySet Name="vwIgracs" EntityType="Self.vwIgrac" />
+    <EntitySet Name="vwKategorijas" EntityType="Self.vwKategorija" />
+    <EntitySet Name="vwLigas" EntityType="Self.vwLiga" />
+    <EntitySet Name="vwNacionalnosts" EntityType="Self.vwNacionalnost" />
+    <EntitySet Name="vwTims" EntityType="Self.vwTim" />
+    <AssociationSet Name="FK_tblIgrac_tblNacionalnost" Association="Self.FK_tblIgrac_tblNacionalnost">
+      <End Role="tblNacionalnost" EntitySet="tblNacionalnosts" />
+      <End Role="tblIgrac" EntitySet="tblIgracs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblIgrac_tblTim" Association="Self.FK_tblIgrac_tblTim">
+      <End Role="tblTim" EntitySet="tblTims" />
+      <End Role="tblIgrac" EntitySet="tblIgracs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLiga_tblKategorija" Association="Self.FK_tblLiga_tblKategorija">
+      <End Role="tblKategorija" EntitySet="tblKategorijas" />
+      <End Role="tblLiga" EntitySet="tblLigas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTim_tblLiga" Association="Self.FK_tblTim_tblLiga">
+      <End Role="tblLiga" EntitySet="tblLigas" />
+      <End Role="tblTim" EntitySet="tblTims" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
