@@ -5,48 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFFudbal"
         mc:Ignorable="d"
-        Title="AddIgrac" Height="950" Width="800">
+        Title="AddIgrac" Height="auto" Width="auto">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="6" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="0" />
-            <ColumnDefinition Width="auto" MinWidth="6" />
-            <ColumnDefinition Width="0" />
-            <ColumnDefinition Width="auto" MinWidth="6" />
-            <ColumnDefinition Width="6" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="6" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="9.731" />
-            <ColumnDefinition Width="11.269"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="138.1"/>
+            <ColumnDefinition Width="13.1"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="6" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="6" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="6" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="6" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="6" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="20" />
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="2" Grid.Row="1" Name="lblIme" Padding="0" Height="20" Width="150" HorizontalAlignment="Right"></Label>
-        <Label Grid.Column="2" Grid.Row="3" Name="lblPrezime" Padding="0" Height="20" Width="150" HorizontalAlignment="Right"></Label>
-        <ComboBox Grid.Column="2" Grid.Row="5" Name="cmbNacionalnost" Height="20" Width="150" IsEditable="True"        
-                  ItemsSource="{Binding NacionalnostList,UpdateSourceTrigger=PropertyChanged}" 
-                  SelectedItem="{Binding Nacionalnost,UpdateSourceTrigger=PropertyChanged}"/>
-        <ComboBox Grid.Column="2" Grid.Row="7" Name="cmbTim" Height="20" Width="150" IsEditable="True"        
-                  ItemsSource="{Binding TimList,UpdateSourceTrigger=PropertyChanged}" 
-                  SelectedItem="{Binding Tim,UpdateSourceTrigger=PropertyChanged}"/>
-      
-        
+
+        <Label Grid.Column="1" Grid.Row="1" Name="lblName" Content="Ime:" Margin="0.2"/>
+        <Label Grid.Column="1" Grid.Row="2" Name="lblSurname" Content="Prezime:" Margin="0.2,6.8,0.2,7" Grid.RowSpan="3"/>
+        <Label Grid.Column="1" Grid.Row="5" Name="lblTeam" Content="Tim:" Margin="0.2,0,0.2,0.4"/>
+        <Label Grid.Column="1" Grid.Row="7" Name="lblNac" Content="Nacionalnost:" Margin="0.2,0.4,0.2,0"/>
+
+        <TextBox Grid.Column="3" Grid.Row="1" Name="txtName" Height="20" Width="150"
+                   Text="{Binding Igrac.ime,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="0.6,3.2"/>
+        <TextBox Grid.Column="3" Grid.Row="3" Name="txtSurname"  Height="20" Width="150" Grid.ColumnSpan="2" Margin="0.6,3.6,0.6,2.8"/>
+
+        <ComboBox Grid.Column="3" Grid.Row="5" Name="cmbTim" Height="20" Width="150" Text="Please select team" DisplayMemberPath="naziv" IsEditable="True" 
+                  ItemsSource="{Binding TimList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Tim, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="0.6,3,0.6,3.4"/>
+        <ComboBox Grid.Column="3" Grid.Row="7" Name="cmbNac" Height="20" Width="150" Text="Please select nacionalnost" DisplayMemberPath="naziv" IsEditable="True" 
+                  ItemsSource="{Binding NacionalnostList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Nacionalnost, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="0.6,3,0.6,3.4"/>
+
     </Grid>
+
+
 </Window>

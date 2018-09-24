@@ -16,6 +16,12 @@ namespace WPFFudbal.ViewModels
         public AddIgracViewModel(AddIgrac add)
         {
             this.add = add;
+            igrac = new vwIgrac();
+            using (Service1Client wcf=new Service1Client())
+            {
+                NacionalnostList = wcf.NacionalnostList().ToList();
+                TimList = wcf.TimList().ToList();
+            }
             
 
         }
@@ -77,7 +83,7 @@ namespace WPFFudbal.ViewModels
         }
 
         private vwNacionalnost nacionalnost;
-        public vwNacionalnost Nacionalnsot
+        public vwNacionalnost Nacionalnost
         {
             get
             {
