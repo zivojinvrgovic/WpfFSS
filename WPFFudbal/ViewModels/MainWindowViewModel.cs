@@ -34,7 +34,7 @@ namespace WPFFudbal.ViewModels
             {
                 IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList().ToList());
                 
-                //show list
+              
             }
 
         }
@@ -121,6 +121,55 @@ namespace WPFFudbal.ViewModels
         {
             return true;
         }
+
+        private ICommand editIgrac;
+        public ICommand EditIgrac
+        {
+            get
+            {
+                if(editIgrac == null)
+                {
+                    editIgrac = new RelayCommand(param => EditIgracExecute(), param => CanEditIgracExecute());
+                }
+                return editIgrac;
+            }
+        }
+
+        private void EditIgracExecute()
+        {
+            try
+            {
+                if (Igrac != null)
+                {
+                    AddIgrac igr = new AddIgrac(Igrac);
+                    
+                    
+                    igr.ShowDialog();
+                    if ((igr.DataContext as AddIgracViewModel).IsUpdateIgrac == false)
+                    {
+                        using (Service1Client wcf = new Service1Client())
+                        {
+                            IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList().ToList());
+                        }
+                    }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+        private bool CanEditIgracExecute()
+        {
+            if(Igrac == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         #endregion
     }
 }

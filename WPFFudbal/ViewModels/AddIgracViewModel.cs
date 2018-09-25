@@ -32,7 +32,7 @@ namespace WPFFudbal.ViewModels
         public AddIgracViewModel(AddIgrac add,vwIgrac igracEdit)
         {
             this.add = add;
-            igrac = new vwIgrac();
+            igrac = igracEdit;
             using(Service1Client wcf=new Service1Client())
             {
                 NacionalnostList = wcf.NacionalnostList().ToList();
