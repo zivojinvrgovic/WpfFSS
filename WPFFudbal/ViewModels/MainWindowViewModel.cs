@@ -170,6 +170,53 @@ namespace WPFFudbal.ViewModels
             }
         }
 
+        private ICommand deleteIgrac;
+        public ICommand DeleteIgrac
+        {
+            get
+            {
+                if (deleteIgrac == null)
+                {
+                    deleteIgrac = new RelayCommand(param => ExecuteDeleteIgrac(), param => CanExecuteDeleteIgrac());
+                }
+                return deleteIgrac;
+            }
+            
+        }
+
+        private void ExecuteDeleteIgrac()
+        {
+            try
+            {
+                if (Igrac != null)
+                {
+                    using(Service1Client wcf=new Service1Client())
+                    {
+                        wcf.IgracBrisanje(Igrac.ID);
+                        IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList().ToList());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("hello");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private bool CanExecuteDeleteIgrac()
+        {
+            if(Igrac == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         #endregion
     }
 }
