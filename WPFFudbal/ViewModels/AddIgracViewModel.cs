@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using WPFFudbal.Commands;
 using WPFFudbal.ServiceReference1;
 
 namespace WPFFudbal.ViewModels
@@ -124,8 +127,51 @@ namespace WPFFudbal.ViewModels
         public bool IsUpdateUser { get; internal set; }
         #endregion
 
-        #region Commands
+        #region Commandes
 
+        private ICommand save;
+        public ICommand Save
+        {
+            get
+            {
+                if (save == null)
+                {
+                    save = new RelayCommand(param => SaveExecute(), param => CanSaveExecute());
+
+                }
+                return save;
+            }
+        }
+
+        private void SaveExecute()
+        {
+            try
+            {
+                using (Service1Client wcf=new Service1Client())
+                {
+                    Igrac.tim = Tim.ID;
+                    Igrac.nacionalnost = Nacionalnost.ID;
+                    wcf.IgracAdd(Igrac);
+                    isUpdateIgrac = true;
+                    add.Close();
+                }
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private bool CanSaveExecute()
+        {
+            if (String.IsNullOrEmpty(igrac.ime))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         #endregion
     }
 }

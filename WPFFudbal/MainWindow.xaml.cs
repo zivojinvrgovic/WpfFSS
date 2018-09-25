@@ -26,6 +26,7 @@ namespace WPFFudbal
         {
             InitializeComponent();
             this.DataContext = new MainWindowViewModel(this);
+            
         }
         public MainWindow(vwIgrac igracEdit)
         {

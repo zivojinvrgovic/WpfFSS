@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +22,9 @@ namespace WPFFudbal.ViewModels
             main = mainOpen;
             using (Service1Client wcf = new Service1Client())
             {
-                IgracList = wcf.IgracList().ToList();
+                
+                IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList().ToList());
+                
             }
         }
         public MainWindowViewModel(MainWindow mainOpen,vwIgrac igracEdit)
@@ -28,7 +32,8 @@ namespace WPFFudbal.ViewModels
             main = mainOpen;
             using (Service1Client wcf = new Service1Client())
             {
-                IgracList = wcf.IgracList().ToList();
+                IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList().ToList());
+                
                 //show list
             }
 
@@ -54,8 +59,8 @@ namespace WPFFudbal.ViewModels
             }
         }
 
-        private List<vwIgrac> igracList;
-        public List<vwIgrac> IgracList
+        private ObservableCollection<vwIgrac> igracList;
+        public ObservableCollection<vwIgrac> IgracList
         {
 
             get
@@ -65,7 +70,7 @@ namespace WPFFudbal.ViewModels
             set
             {
                 igracList = value;
-                OnPropertyChanged("userList");
+                OnPropertyChanged("IgracList");
             }
         }
 
@@ -99,7 +104,8 @@ namespace WPFFudbal.ViewModels
                 if((add.DataContext as AddIgracViewModel).IsUpdateIgrac == true){
                     using(Service1Client wcf=new Service1Client())
                     {
-                        IgracList = wcf.IgracList().ToList();
+                        IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList().ToList());
+                        
                     }
                 }
 

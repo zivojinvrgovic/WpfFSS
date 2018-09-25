@@ -26,6 +26,8 @@
             <RowDefinition Height="6"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
         <Label Grid.Column="1" Grid.Row="1" Name="lblName" Content="Ime:" Margin="0.2"/>
@@ -35,7 +37,8 @@
 
         <TextBox Grid.Column="3" Grid.Row="1" Name="txtName" Height="20" Width="150"
                    Text="{Binding Igrac.ime,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="0.6,3.2"/>
-        <TextBox Grid.Column="3" Grid.Row="3" Name="txtSurname"  Height="20" Width="150" Grid.ColumnSpan="2" Margin="0.6,3.6,0.6,2.8"/>
+        <TextBox Grid.Column="3" Grid.Row="3" Name="txtSurname"  Height="20" Width="150" Grid.ColumnSpan="2" Margin="0.6,3.6,0.6,2.8"
+                 Text="{Binding Igrac.prezime , UpdateSourceTrigger=PropertyChanged}"/>
 
         <ComboBox Grid.Column="3" Grid.Row="5" Name="cmbTim" Height="20" Width="150" Text="Please select team" DisplayMemberPath="naziv" IsEditable="True" 
                   ItemsSource="{Binding TimList, UpdateSourceTrigger=PropertyChanged}"
@@ -43,7 +46,8 @@
         <ComboBox Grid.Column="3" Grid.Row="7" Name="cmbNac" Height="20" Width="150" Text="Please select nacionalnost" DisplayMemberPath="naziv" IsEditable="True" 
                   ItemsSource="{Binding NacionalnostList, UpdateSourceTrigger=PropertyChanged}"
                   SelectedItem="{Binding Nacionalnost, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="0.6,3,0.6,3.4"/>
-
+        <Button Grid.Column="3" Grid.Row="9" Name="btnSave" Content="Save" Height="20" Width="150" FontWeight="Bold"
+                Command="{Binding Save,UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
 
 

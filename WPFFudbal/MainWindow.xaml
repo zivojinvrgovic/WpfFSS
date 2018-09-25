@@ -53,18 +53,17 @@
         <Grid Grid.Column="3" Grid.Row="1" Height="auto" Width="auto">
             <DataGrid Name="DataGridIgrac" ItemsSource="{Binding IgracList,UpdateSourceTrigger=PropertyChanged}"
                       SelectedItem="{Binding Igrac,UpdateSourceTrigger=PropertyChanged}"
-                      IsReadOnly="True"
-                     
+                      IsReadOnly="True"                   
                       HeadersVisibility="Column"
-                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" BorderBrush="Black"
+                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" 
+                      BorderBrush="Black"
                       Foreground="Black" FontWeight="Bold" Margin="0,0,161,-176">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
-                    <DataGridTextColumn Header="Ime" Binding="{Binding ime}"/>
-                    <DataGridTextColumn Header="Prezime" Binding="{Binding prezime}"/>
-                    <DataGridTextColumn Header="Nacionalnost" Binding="{Binding nazNac}"/>
-                    <DataGridTextColumn Header="Tim" Binding="{Binding nazTim}"/>
-
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Ime" Binding="{Binding ime,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Prezime" Binding="{Binding prezime,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Nacionalnost" Binding="{Binding nazNac,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Tim" Binding="{Binding nazTim,UpdateSourceTrigger=PropertyChanged}"/>
                 </DataGrid.Columns>
             </DataGrid>
 
