@@ -59,6 +59,7 @@ namespace WPFFudbal.ViewModels
             }
         }
 
+        
         private ObservableCollection<vwIgrac> igracList;
         public ObservableCollection<vwIgrac> IgracList
         {
@@ -142,8 +143,8 @@ namespace WPFFudbal.ViewModels
                 if (Igrac != null)
                 {
                     AddIgrac igr = new AddIgrac(Igrac);
-                    
-                    
+                    int nac = Igrac.nacionalnost;
+                 
                     igr.ShowDialog();
                     if ((igr.DataContext as AddIgracViewModel).IsUpdateIgrac == false)
                     {
