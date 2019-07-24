@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WCFSERVICEFSS;
 using WPFFudbal.ServiceReference1;
 using WPFFudbal.ViewModels;
 
@@ -34,6 +35,7 @@ namespace WPFFudbal
             this.DataContext = new MainWindowViewModel(this, igracEdit);
 
         }
+
 
 
 

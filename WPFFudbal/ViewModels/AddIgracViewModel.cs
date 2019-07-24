@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using WCFSERVICEFSS;
 using WPFFudbal.Commands;
 using WPFFudbal.ServiceReference1;
 
 namespace WPFFudbal.ViewModels
 {
-    class AddIgracViewModel
+    class AddIgracViewModel:ViewModelBase
     {
         AddIgrac add;
 
@@ -22,11 +25,9 @@ namespace WPFFudbal.ViewModels
             igrac = new vwIgrac();
             using (Service1Client wcf=new Service1Client())
             {
-                NacionalnostList = wcf.NacionalnostList().ToList();
-                TimList = wcf.TimList().ToList();
+                NacionalnostList = new ObservableCollection<vwNacionalnost>(wcf.NacionalnostList().ToList());
+                TimList = new ObservableCollection<vwTim>(wcf.TimList().ToList());
             }
-            
-
         }
 
         public AddIgracViewModel(AddIgrac add,vwIgrac igracEdit)
@@ -35,8 +36,8 @@ namespace WPFFudbal.ViewModels
             igrac = igracEdit;
             using(Service1Client wcf=new Service1Client())
             {
-                NacionalnostList = wcf.NacionalnostList().ToList();
-                TimList = wcf.TimList().ToList();
+                NacionalnostList = new ObservableCollection<vwNacionalnost>(wcf.NacionalnostList().ToList());
+                TimList = new ObservableCollection<vwTim>(wcf.TimList().ToList());
             }
 
         }
@@ -54,7 +55,6 @@ namespace WPFFudbal.ViewModels
             set
             {
                 igrac = value;
-                
             }
         }
 
@@ -68,7 +68,6 @@ namespace WPFFudbal.ViewModels
             set
             {
                 tim = value;
-                
             }
         }
 
@@ -97,8 +96,8 @@ namespace WPFFudbal.ViewModels
                 nacionalnost = value;
             }
         }
-        private List<vwTim> timList;
-        public List<vwTim> TimList
+        private ObservableCollection<vwTim> timList;
+        public ObservableCollection<vwTim> TimList
         {
             get
             {
@@ -111,8 +110,8 @@ namespace WPFFudbal.ViewModels
             }
         }
 
-        private List<vwNacionalnost> nacionalnostList;
-        public List<vwNacionalnost> NacionalnostList
+        private ObservableCollection<vwNacionalnost> nacionalnostList;
+        public ObservableCollection<vwNacionalnost> NacionalnostList
         {
             get
             {
@@ -163,7 +162,7 @@ namespace WPFFudbal.ViewModels
 
         private bool CanSaveExecute()
         {
-            if (String.IsNullOrEmpty(igrac.ime))
+            if (String.IsNullOrEmpty(igrac.ime) || String.IsNullOrEmpty(igrac.prezime))
             {
                 return false;
             }
@@ -173,5 +172,44 @@ namespace WPFFudbal.ViewModels
             }
         }
         #endregion
+
+        //public void OnComboBoxLoad(object sender, RoutedEventArgs e)
+        //{
+        //    //store current selcted index in variable
+        //    int tempIndex = ((ComboBox)sender).SelectedIndex;
+
+        //    //// ... Make the your desire item selected.
+        //    ((ComboBox)sender).SelectedIndex = -1;
+        //    ((ComboBox)sender).SelectedIndex = tempIndex;
+        //}
+
+        //public void ComboBox_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    // ... A List.
+        //    List<string> data = new List<string>();
+        //    data.Add("Book");
+        //    data.Add("Computer");
+        //    data.Add("Chair");
+        //    data.Add("Mug");
+
+        //    // ... Get the ComboBox reference.
+        //    var comboBox = sender as ComboBox;
+
+        //    // ... Assign the ItemsSource to the List.
+        //    comboBox.ItemsSource = data;
+
+        //    // ... Make the first item selected.
+        //    comboBox.SelectedIndex = 0;
+        //}
+
+        //public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    // ... Get the ComboBox.
+        //    var comboBox = sender as ComboBox;
+
+        //    // ... Set SelectedItem as Window Title.
+        //    string value = comboBox.SelectedItem as string;
+        //    //this.Title = "Selected: " + value;
+        //}
     }
 }

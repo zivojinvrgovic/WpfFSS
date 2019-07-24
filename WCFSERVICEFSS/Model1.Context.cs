@@ -35,5 +35,9 @@ namespace WCFSERVICEFSS
         public virtual DbSet<vwLiga> vwLigas { get; set; }
         public virtual DbSet<vwNacionalnost> vwNacionalnosts { get; set; }
         public virtual DbSet<vwTim> vwTims { get; set; }
+        public virtual DbSet<tblSudija> tblSudijas { get; set; }
+        public virtual DbSet<tblTrener> tblTreners { get; set; }
+        public virtual DbSet<vwSudija> vwSudijas { get; set; }
+        public virtual DbSet<vwTrener> vwTreners { get; set; }
     }
 }

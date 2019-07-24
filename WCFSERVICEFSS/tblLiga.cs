@@ -18,6 +18,7 @@ namespace WCFSERVICEFSS
         public tblLiga()
         {
             this.tblTims = new HashSet<tblTim>();
+            this.tblSudijas = new HashSet<tblSudija>();
         }
     
         public int ID { get; set; }
@@ -28,5 +29,7 @@ namespace WCFSERVICEFSS
         public virtual tblKategorija tblKategorija { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTim> tblTims { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblSudija> tblSudijas { get; set; }
     }
 }

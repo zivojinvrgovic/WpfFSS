@@ -84,6 +84,36 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="vwNacionalnost" nillable="true" type="tns:vwNacionalnost" />
+  <xs:complexType name="ArrayOfvwTrener">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwTrener" nillable="true" type="tns:vwTrener" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwTrener" nillable="true" type="tns:ArrayOfvwTrener" />
+  <xs:complexType name="vwTrener">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prezime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tim" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwTrener" nillable="true" type="tns:vwTrener" />
+  <xs:complexType name="ArrayOfvwSudija">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vwSudija" nillable="true" type="tns:vwSudija" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvwSudija" nillable="true" type="tns:ArrayOfvwSudija" />
+  <xs:complexType name="vwSudija">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="liga" type="xs:int" />
+      <xs:element minOccurs="0" name="prezime" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="vwSudija" nillable="true" type="tns:vwSudija" />
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />

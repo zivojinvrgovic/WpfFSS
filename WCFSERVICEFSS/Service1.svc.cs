@@ -502,5 +502,195 @@ namespace WCFSERVICEFSS
             }
             return composite;
         }
+
+        public List<vwTrener> TrenerList()
+        {
+            try
+            {
+                using (FSSEntities context = new FSSEntities())
+                {
+                    List<vwTrener> list = new List<vwTrener>();
+                    list = (from x in context.vwTreners select x).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public vwTrener TrenerAdd(vwTrener trener)
+        {
+            try
+            {
+                using (FSSEntities context = new FSSEntities())
+                {
+                    if (trener.ID == 0)
+                    {
+                        tblTrener newTrener = new tblTrener();
+                        newTrener.ime = trener.ime;
+                        newTrener.prezime = trener.prezime;
+                        newTrener.tim = trener.tim;
+                        context.tblTreners.Add(newTrener);
+                        context.SaveChanges();
+                        trener.ID = newTrener.ID;
+
+                        return trener;
+                    }
+                    else
+                    {
+                        tblTrener editTrener = (from r in context.tblTreners where r.ID == trener.ID select r).FirstOrDefault();
+                        editTrener.ime = trener.ime;
+                        editTrener.prezime = trener.prezime;
+                        editTrener.tim = trener.tim;
+
+
+
+                        context.SaveChanges();
+                        return trener;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public void TrenerBrisanje(int ID)
+        {
+            try
+            {
+                using (FSSEntities context = new FSSEntities())
+                {
+
+                    tblTrener del = (from r in context.tblTreners where r.ID == ID select r).FirstOrDefault();
+
+
+                    context.tblTreners.Remove(del);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+            }
+        }
+
+        public vwTrener GetOneTrener(int ID)
+        {
+            try
+            {
+                using (FSSEntities n = new FSSEntities())
+                {
+                    vwTrener tel = new vwTrener();
+                    tel = (from i in n.vwTreners where i.ID == ID select i).FirstOrDefault();
+                    return tel;
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exeption" + e.Message.ToString());
+                return null;
+            }
+        }
+
+        public List<vwSudija> SudijaList()
+        {
+            try
+            {
+                using (FSSEntities context = new FSSEntities())
+                {
+                    List<vwSudija> list = new List<vwSudija>();
+                    list = (from x in context.vwSudijas select x).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public vwSudija SudijaAdd(vwSudija sudija)
+        {
+            try
+            {
+                using (FSSEntities context = new FSSEntities())
+                {
+                    if (sudija.ID == 0)
+                    {
+                        tblSudija newSudija = new tblSudija();
+                        newSudija.ime = sudija.ime;
+                        newSudija.prezime = sudija.prezime;
+                        newSudija.liga = sudija.liga;
+                        context.tblSudijas.Add(newSudija);
+                        context.SaveChanges();
+                        sudija.ID = newSudija.ID;
+
+                        return sudija;
+                    }
+                    else
+                    {
+                        tblSudija editSudija = (from r in context.tblSudijas where r.ID == sudija.ID select r).FirstOrDefault();
+                        editSudija.ime = sudija.ime;
+                        editSudija.prezime = sudija.prezime;
+                        editSudija.liga = sudija.liga;
+
+
+
+                        context.SaveChanges();
+                        return sudija;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public void SudijaBrisanje(int ID)
+        {
+            try
+            {
+                using (FSSEntities context = new FSSEntities())
+                {
+
+                    tblSudija del = (from r in context.tblSudijas where r.ID == ID select r).FirstOrDefault();
+
+
+                    context.tblSudijas.Remove(del);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+            }
+        }
+
+        public vwSudija GetOneSudija(int ID)
+        {
+            try
+            {
+                using (FSSEntities n = new FSSEntities())
+                {
+                    vwSudija tel = new vwSudija();
+                    tel = (from i in n.vwSudijas where i.ID == ID select i).FirstOrDefault();
+                    return tel;
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exeption" + e.Message.ToString());
+                return null;
+            }
+        }
     }
 }

@@ -61,73 +61,125 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TrenerList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrenerListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="TrenerListResult" nillable="true" type="q6:ArrayOfvwTrener" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SudijaList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SudijaListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="SudijaListResult" nillable="true" type="q7:ArrayOfvwSudija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="IgracAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="igrac" nillable="true" type="q6:vwIgrac" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="igrac" nillable="true" type="q8:vwIgrac" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="IgracAddResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="IgracAddResult" nillable="true" type="q7:vwIgrac" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="IgracAddResult" nillable="true" type="q9:vwIgrac" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="TimAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="tim" nillable="true" type="q8:vwTim" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="tim" nillable="true" type="q10:vwTim" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="TimAddResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="TimAddResult" nillable="true" type="q9:vwTim" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="TimAddResult" nillable="true" type="q11:vwTim" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="LigaAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="liga" nillable="true" type="q10:vwLiga" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="liga" nillable="true" type="q12:vwLiga" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="LigaAddResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="LigaAddResult" nillable="true" type="q11:vwLiga" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="LigaAddResult" nillable="true" type="q13:vwLiga" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="KategorijaAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="kategorija" nillable="true" type="q12:vwKategorija" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="kategorija" nillable="true" type="q14:vwKategorija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="KategorijaAddResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="KategorijaAddResult" nillable="true" type="q13:vwKategorija" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="KategorijaAddResult" nillable="true" type="q15:vwKategorija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="NacionalnostAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="nacionalnost" nillable="true" type="q14:vwNacionalnost" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="nacionalnost" nillable="true" type="q16:vwNacionalnost" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="NacionalnostAddResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="NacionalnostAddResult" nillable="true" type="q15:vwNacionalnost" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="NacionalnostAddResult" nillable="true" type="q17:vwNacionalnost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrenerAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="trener" nillable="true" type="q18:vwTrener" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrenerAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="TrenerAddResult" nillable="true" type="q19:vwTrener" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SudijaAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="sudija" nillable="true" type="q20:vwSudija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SudijaAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="SudijaAddResult" nillable="true" type="q21:vwSudija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -191,6 +243,30 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="TrenerBrisanje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrenerBrisanjeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SudijaBrisanje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SudijaBrisanjeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetOneIgrac">
     <xs:complexType>
       <xs:sequence>
@@ -201,7 +277,7 @@
   <xs:element name="GetOneIgracResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneIgracResult" nillable="true" type="q16:vwIgrac" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneIgracResult" nillable="true" type="q22:vwIgrac" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -215,7 +291,7 @@
   <xs:element name="GetOneKategorijaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneKategorijaResult" nillable="true" type="q17:vwKategorija" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneKategorijaResult" nillable="true" type="q23:vwKategorija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -229,7 +305,7 @@
   <xs:element name="GetOneligaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneligaResult" nillable="true" type="q18:vwLiga" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneligaResult" nillable="true" type="q24:vwLiga" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -243,7 +319,7 @@
   <xs:element name="GetOneNacionalnostResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneNacionalnostResult" nillable="true" type="q19:vwNacionalnost" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneNacionalnostResult" nillable="true" type="q25:vwNacionalnost" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -257,7 +333,35 @@
   <xs:element name="GetOneTimResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneTimResult" nillable="true" type="q20:vwTim" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneTimResult" nillable="true" type="q26:vwTim" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneTrener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneTrenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneTrenerResult" nillable="true" type="q27:vwTrener" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneSudija">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneSudijaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetOneSudijaResult" nillable="true" type="q28:vwSudija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -278,14 +382,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="composite" nillable="true" type="q21:CompositeType" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="composite" nillable="true" type="q29:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q22:CompositeType" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q30:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

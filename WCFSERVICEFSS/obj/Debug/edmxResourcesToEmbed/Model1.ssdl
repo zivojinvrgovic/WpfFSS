@@ -35,6 +35,15 @@
     <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="skracenica" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="tblSudija">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="liga" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="tblTim">
     <Key>
       <PropertyRef Name="ID" />
@@ -44,6 +53,15 @@
     <Property Name="sediste" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="osnovan" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="liga" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblTrener">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tim" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'FSS.dbo.vwIgrac' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -115,6 +133,20 @@ warning 6002: The table/view 'FSS.dbo.vwNacionalnost' does not have a primary ke
     <Property Name="Expr3" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwSudija' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwSudija">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ime" />
+      <PropertyRef Name="prezime" />
+      <PropertyRef Name="liga" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="liga" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="vwTim">
     <Key>
@@ -131,6 +163,20 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
     <Property Name="osnovan" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="liga" Type="int" Nullable="false" />
     <Property Name="nazLige" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwTrener">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ime" />
+      <PropertyRef Name="prezime" />
+      <PropertyRef Name="tim" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tim" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_tblIgrac_tblNacionalnost">
     <End Role="tblNacionalnost" Type="Self.tblNacionalnost" Multiplicity="1" />
@@ -168,6 +214,18 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblSudija_tblSudija">
+    <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="1" />
+    <End Role="tblSudija" Type="Self.tblSudija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLiga">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSudija">
+        <PropertyRef Name="liga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblTim_tblLiga">
     <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="1" />
     <End Role="tblTim" Type="Self.tblTim" Multiplicity="*" />
@@ -180,12 +238,26 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblTrener_tblTim">
+    <End Role="tblTim" Type="Self.tblTim" Multiplicity="1" />
+    <End Role="tblTrener" Type="Self.tblTrener" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTim">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblTrener">
+        <PropertyRef Name="tim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="FSSModelStoreContainer">
     <EntitySet Name="tblIgrac" EntityType="Self.tblIgrac" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblKategorija" EntityType="Self.tblKategorija" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblLiga" EntityType="Self.tblLiga" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblNacionalnost" EntityType="Self.tblNacionalnost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSudija" EntityType="Self.tblSudija" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblTim" EntityType="Self.tblTim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTrener" EntityType="Self.tblTrener" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vwIgrac" EntityType="Self.vwIgrac" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [vwIgrac].[ID] AS [ID], 
@@ -225,6 +297,14 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
     [vwNacionalnost].[Expr3] AS [Expr3]
     FROM [dbo].[vwNacionalnost] AS [vwNacionalnost]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="vwSudija" EntityType="Self.vwSudija" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwSudija].[ID] AS [ID], 
+    [vwSudija].[ime] AS [ime], 
+    [vwSudija].[prezime] AS [prezime], 
+    [vwSudija].[liga] AS [liga]
+    FROM [dbo].[vwSudija] AS [vwSudija]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="vwTim" EntityType="Self.vwTim" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [vwTim].[ID] AS [ID], 
@@ -234,6 +314,14 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
     [vwTim].[liga] AS [liga], 
     [vwTim].[nazLige] AS [nazLige]
     FROM [dbo].[vwTim] AS [vwTim]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwTrener" EntityType="Self.vwTrener" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwTrener].[ID] AS [ID], 
+    [vwTrener].[ime] AS [ime], 
+    [vwTrener].[prezime] AS [prezime], 
+    [vwTrener].[tim] AS [tim]
+    FROM [dbo].[vwTrener] AS [vwTrener]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_tblIgrac_tblNacionalnost" Association="Self.FK_tblIgrac_tblNacionalnost">
       <End Role="tblNacionalnost" EntitySet="tblNacionalnost" />
@@ -247,9 +335,17 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
       <End Role="tblKategorija" EntitySet="tblKategorija" />
       <End Role="tblLiga" EntitySet="tblLiga" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblSudija_tblSudija" Association="Self.FK_tblSudija_tblSudija">
+      <End Role="tblLiga" EntitySet="tblLiga" />
+      <End Role="tblSudija" EntitySet="tblSudija" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblTim_tblLiga" Association="Self.FK_tblTim_tblLiga">
       <End Role="tblLiga" EntitySet="tblLiga" />
       <End Role="tblTim" EntitySet="tblTim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTrener_tblTim" Association="Self.FK_tblTrener_tblTim">
+      <End Role="tblTim" EntitySet="tblTim" />
+      <End Role="tblTrener" EntitySet="tblTrener" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

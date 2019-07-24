@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFFudbal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Fudbalski Savez Srbije" Height="450" Width="950">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -16,6 +16,9 @@
             <ColumnDefinition Width="auto" MinWidth="6" />
             <ColumnDefinition Width="0" />
             <ColumnDefinition Width="auto" MinWidth="6" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="6" />
             <ColumnDefinition Width="6" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="6" />
@@ -38,26 +41,16 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-    
 
-    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="0,0.2,0,7" Grid.RowSpan="2">
-            <Button Width="160" Height="30" Name="btnManageCashRegister" Content="Manage igrac" 
-                    Command="{Binding ManageIgrac}" Margin="4" FontWeight="Bold"/>
-            <Button Width="160" Height="30" Name="btnManageManufacturer" Content="Manage tim"                 
-                    Command="{Binding ManageTim}" FontWeight="Bold"/>
-            <Button Width="160" Height="30" Name="btnManage" Content="Manage liga"                 
-                    Command="{Binding ManageLiga}" FontWeight="Bold"/>
-        </StackPanel>
-
-
-        <Grid Grid.Column="3" Grid.Row="1" Height="auto" Width="auto">
+        <Grid Grid.Column="2" Grid.Row="1" Height="auto" Width="auto" Grid.ColumnSpan="5" Margin="6.8,0.2,29.4,36.6" Grid.RowSpan="2" >
             <DataGrid Name="DataGridIgrac" ItemsSource="{Binding IgracList,UpdateSourceTrigger=PropertyChanged}"
                       SelectedItem="{Binding Igrac,UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding ViewIgrac,UpdateSourceTrigger=PropertyChanged}"
                       IsReadOnly="True"                   
                       HeadersVisibility="Column"
                       AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" 
                       BorderBrush="Black"
-                      Foreground="Black" FontWeight="Bold" Margin="0,0,161,-176">
+                      Foreground="Black" FontWeight="Bold" Margin="0,0,161,-176" Height="250" Width="300">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID,UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridTextColumn Header="Ime" Binding="{Binding ime,UpdateSourceTrigger=PropertyChanged}"/>
@@ -66,18 +59,91 @@
                     <DataGridTextColumn Header="Tim" Binding="{Binding nazTim,UpdateSourceTrigger=PropertyChanged}"/>
                 </DataGrid.Columns>
             </DataGrid>
-
+            <DataGrid Name="DataGridTim" ItemsSource="{Binding TimList,UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Tim,UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding ViewTim,UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True"                   
+                      HeadersVisibility="Column"
+                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" 
+                      BorderBrush="Black"
+                      Foreground="Black" FontWeight="Bold" Margin="0,0,161,-176" Height="250" Width="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Naziv" Binding="{Binding naziv,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Sediste" Binding="{Binding sediste,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Osnovan" Binding="{Binding osnovan,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Liga" Binding="{Binding nazLige,UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Name="DataGridLiga" ItemsSource="{Binding LigaList,UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Liga,UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding ViewLiga,UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True"                   
+                      HeadersVisibility="Column"
+                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" 
+                      BorderBrush="Black"
+                      Foreground="Black" FontWeight="Bold" Margin="0,0,161,-176" Height="250" Width="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Naziv" Binding="{Binding naziv,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Oznaka" Binding="{Binding oznaka,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Kategorija" Binding="{Binding nazKat,UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
 
-        <StackPanel Grid.Column="5" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="6,0.2,0.4,7" Grid.RowSpan="2">
+        <StackPanel Grid.Column="5" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="6,0.2,0.4,7" Grid.RowSpan="2"
+                    Visibility="{Binding ViewIgrac,UpdateSourceTrigger=PropertyChanged}">
             <Button Width="120" Height="30" Name="btnAddCashRegister" Content="Add igrac"                   
-                    Command="{Binding AddNewIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="4" BorderThickness="2"/>
+                    Command="{Binding AddNewIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
             <Button Width="120" Height="30" Name="btnEditCashRegister" Content="Edit igrac  " 
                     Visibility="{Binding ViewIgrac, UpdateSourceTrigger=PropertyChanged}"
-                    Command="{Binding EditIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="4" BorderThickness="2"/>
+                    Command="{Binding EditIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
             <Button Width="120" Height="30" Name="btnDeleteCashRegister" Content="Delete igrac "
                     Visibility="{Binding ViewIgrac, UpdateSourceTrigger=PropertyChanged}"
-                    Command="{Binding DeleteIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="4" BorderThickness="2"/>
+                    Command="{Binding DeleteIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+            <Button Width="120" Height="30" Name="btnSwap" Content="Swap columns "
+                    Visibility="{Binding ViewIgrac, UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding SwapColumns, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
         </StackPanel>
+
+        <StackPanel Grid.Column="5" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="6,0.2,0.4,7" Grid.RowSpan="2"
+                    Visibility="{Binding ViewTim,UpdateSourceTrigger=PropertyChanged}">
+            <Button Width="120" Height="30" Name="btnAddTim" Content="Add tim"                   
+                    Command="{Binding AddTim, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+            <Button Width="120" Height="30" Name="btnEditTim" Content="Edit tim"
+                    Visibility="{Binding ViewTim, UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding EditTim, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+            <Button Width="120" Height="30" Name="btnDeleteTim" Content="Delete tim "
+                    Visibility="{Binding ViewTim, UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding DeleteTim, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="5" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="6,0.2,0.4,7" Grid.RowSpan="2"
+                    Visibility="{Binding ViewLiga,UpdateSourceTrigger=PropertyChanged}">
+            <Button Width="120" Height="30" Name="btnAddLiga" Content="Add liga"                   
+                    Command="{Binding AddLiga, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+            <Button Width="120" Height="30" Name="btnEditLiga" Content="Edit liga"
+                    Visibility="{Binding ViewLiga, UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding EditLiga, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+            <Button Width="120" Height="30" Name="btnDeleteLiga" Content="Delete liga "
+                    Visibility="{Binding ViewLiga, UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding DeleteLiga, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+            <Button Width="160" Height="20" Name="btnManageIgrac" Content="Manage igrac" Margin="5"
+                    Command="{Binding ManageIgrac,UpdateSourceTrigger=PropertyChanged}"  FontWeight="Bold"/>
+            <Button Width="160" Height="20" Name="btnManageTim" Content="Manage tim" Margin="5"                
+                    Command="{Binding ManageTim,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+            <Button Width="160" Height="20" Name="btnManageLiga" Content="Manage liga" Margin="5"                
+                    Command="{Binding ManageLiga,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+        </StackPanel>
+
+        <Image Height="200" Width="150" Grid.ColumnSpan="2" Grid.Column="7" Margin="9.8,0.2,-134.2,15" Grid.Row="1" Grid.RowSpan="12" >
+            <Image.Source>
+                <BitmapImage  UriSource="/Images/fss.png"  />
+            </Image.Source>
+        </Image>
     </Grid>
 </Window>

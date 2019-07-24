@@ -9,743 +9,95 @@
 //------------------------------------------------------------------------------
 
 namespace WPFFudbal.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="vwIgrac", Namespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS")]
-    [System.SerializableAttribute()]
-    public partial class vwIgrac : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string imeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int nacionalnostField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazNacField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazTimField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string prezimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int timField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.datumField, value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ime {
-            get {
-                return this.imeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.imeField, value) != true)) {
-                    this.imeField = value;
-                    this.RaisePropertyChanged("ime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int nacionalnost {
-            get {
-                return this.nacionalnostField;
-            }
-            set {
-                if ((this.nacionalnostField.Equals(value) != true)) {
-                    this.nacionalnostField = value;
-                    this.RaisePropertyChanged("nacionalnost");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nazNac {
-            get {
-                return this.nazNacField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazNacField, value) != true)) {
-                    this.nazNacField = value;
-                    this.RaisePropertyChanged("nazNac");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nazTim {
-            get {
-                return this.nazTimField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazTimField, value) != true)) {
-                    this.nazTimField = value;
-                    this.RaisePropertyChanged("nazTim");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string prezime {
-            get {
-                return this.prezimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.prezimeField, value) != true)) {
-                    this.prezimeField = value;
-                    this.RaisePropertyChanged("prezime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int tim {
-            get {
-                return this.timField;
-            }
-            set {
-                if ((this.timField.Equals(value) != true)) {
-                    this.timField = value;
-                    this.RaisePropertyChanged("tim");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="vwTim", Namespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS")]
-    [System.SerializableAttribute()]
-    public partial class vwTim : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ligaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazLigeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazivField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string osnovanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sedisteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int liga {
-            get {
-                return this.ligaField;
-            }
-            set {
-                if ((this.ligaField.Equals(value) != true)) {
-                    this.ligaField = value;
-                    this.RaisePropertyChanged("liga");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nazLige {
-            get {
-                return this.nazLigeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazLigeField, value) != true)) {
-                    this.nazLigeField = value;
-                    this.RaisePropertyChanged("nazLige");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naziv {
-            get {
-                return this.nazivField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
-                    this.nazivField = value;
-                    this.RaisePropertyChanged("naziv");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string osnovan {
-            get {
-                return this.osnovanField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.osnovanField, value) != true)) {
-                    this.osnovanField = value;
-                    this.RaisePropertyChanged("osnovan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sediste {
-            get {
-                return this.sedisteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sedisteField, value) != true)) {
-                    this.sedisteField = value;
-                    this.RaisePropertyChanged("sediste");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="vwLiga", Namespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS")]
-    [System.SerializableAttribute()]
-    public partial class vwLiga : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazKatField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazivField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string oznakaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int rangField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nazKat {
-            get {
-                return this.nazKatField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazKatField, value) != true)) {
-                    this.nazKatField = value;
-                    this.RaisePropertyChanged("nazKat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naziv {
-            get {
-                return this.nazivField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
-                    this.nazivField = value;
-                    this.RaisePropertyChanged("naziv");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oznaka {
-            get {
-                return this.oznakaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.oznakaField, value) != true)) {
-                    this.oznakaField = value;
-                    this.RaisePropertyChanged("oznaka");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int rang {
-            get {
-                return this.rangField;
-            }
-            set {
-                if ((this.rangField.Equals(value) != true)) {
-                    this.rangField = value;
-                    this.RaisePropertyChanged("rang");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="vwKategorija", Namespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS")]
-    [System.SerializableAttribute()]
-    public partial class vwKategorija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Expr1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Expr2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rangField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Expr1 {
-            get {
-                return this.Expr1Field;
-            }
-            set {
-                if ((this.Expr1Field.Equals(value) != true)) {
-                    this.Expr1Field = value;
-                    this.RaisePropertyChanged("Expr1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Expr2 {
-            get {
-                return this.Expr2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Expr2Field, value) != true)) {
-                    this.Expr2Field = value;
-                    this.RaisePropertyChanged("Expr2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rang {
-            get {
-                return this.rangField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rangField, value) != true)) {
-                    this.rangField = value;
-                    this.RaisePropertyChanged("rang");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="vwNacionalnost", Namespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS")]
-    [System.SerializableAttribute()]
-    public partial class vwNacionalnost : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Expr1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Expr2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Expr3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazivField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string skracenicaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Expr1 {
-            get {
-                return this.Expr1Field;
-            }
-            set {
-                if ((this.Expr1Field.Equals(value) != true)) {
-                    this.Expr1Field = value;
-                    this.RaisePropertyChanged("Expr1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Expr2 {
-            get {
-                return this.Expr2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Expr2Field, value) != true)) {
-                    this.Expr2Field = value;
-                    this.RaisePropertyChanged("Expr2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Expr3 {
-            get {
-                return this.Expr3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Expr3Field, value) != true)) {
-                    this.Expr3Field = value;
-                    this.RaisePropertyChanged("Expr3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naziv {
-            get {
-                return this.nazivField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
-                    this.nazivField = value;
-                    this.RaisePropertyChanged("naziv");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string skracenica {
-            get {
-                return this.skracenicaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.skracenicaField, value) != true)) {
-                    this.skracenicaField = value;
-                    this.RaisePropertyChanged("skracenica");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WCFSERVICEFSS")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IgracList", ReplyAction="http://tempuri.org/IService1/IgracListResponse")]
-        WPFFudbal.ServiceReference1.vwIgrac[] IgracList();
+        WCFSERVICEFSS.vwIgrac[] IgracList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IgracList", ReplyAction="http://tempuri.org/IService1/IgracListResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwIgrac[]> IgracListAsync();
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwIgrac[]> IgracListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TimList", ReplyAction="http://tempuri.org/IService1/TimListResponse")]
-        WPFFudbal.ServiceReference1.vwTim[] TimList();
+        WCFSERVICEFSS.vwTim[] TimList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TimList", ReplyAction="http://tempuri.org/IService1/TimListResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwTim[]> TimListAsync();
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwTim[]> TimListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LigaList", ReplyAction="http://tempuri.org/IService1/LigaListResponse")]
-        WPFFudbal.ServiceReference1.vwLiga[] LigaList();
+        WCFSERVICEFSS.vwLiga[] LigaList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LigaList", ReplyAction="http://tempuri.org/IService1/LigaListResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwLiga[]> LigaListAsync();
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwLiga[]> LigaListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/KategorijaList", ReplyAction="http://tempuri.org/IService1/KategorijaListResponse")]
-        WPFFudbal.ServiceReference1.vwKategorija[] KategorijaList();
+        WCFSERVICEFSS.vwKategorija[] KategorijaList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/KategorijaList", ReplyAction="http://tempuri.org/IService1/KategorijaListResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwKategorija[]> KategorijaListAsync();
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwKategorija[]> KategorijaListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NacionalnostList", ReplyAction="http://tempuri.org/IService1/NacionalnostListResponse")]
-        WPFFudbal.ServiceReference1.vwNacionalnost[] NacionalnostList();
+        WCFSERVICEFSS.vwNacionalnost[] NacionalnostList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NacionalnostList", ReplyAction="http://tempuri.org/IService1/NacionalnostListResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwNacionalnost[]> NacionalnostListAsync();
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwNacionalnost[]> NacionalnostListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TrenerList", ReplyAction="http://tempuri.org/IService1/TrenerListResponse")]
+        WCFSERVICEFSS.vwTrener[] TrenerList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TrenerList", ReplyAction="http://tempuri.org/IService1/TrenerListResponse")]
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwTrener[]> TrenerListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SudijaList", ReplyAction="http://tempuri.org/IService1/SudijaListResponse")]
+        WCFSERVICEFSS.vwSudija[] SudijaList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SudijaList", ReplyAction="http://tempuri.org/IService1/SudijaListResponse")]
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwSudija[]> SudijaListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IgracAdd", ReplyAction="http://tempuri.org/IService1/IgracAddResponse")]
-        WPFFudbal.ServiceReference1.vwIgrac IgracAdd(WPFFudbal.ServiceReference1.vwIgrac igrac);
+        WCFSERVICEFSS.vwIgrac IgracAdd(WCFSERVICEFSS.vwIgrac igrac);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IgracAdd", ReplyAction="http://tempuri.org/IService1/IgracAddResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwIgrac> IgracAddAsync(WPFFudbal.ServiceReference1.vwIgrac igrac);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwIgrac> IgracAddAsync(WCFSERVICEFSS.vwIgrac igrac);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TimAdd", ReplyAction="http://tempuri.org/IService1/TimAddResponse")]
-        WPFFudbal.ServiceReference1.vwTim TimAdd(WPFFudbal.ServiceReference1.vwTim tim);
+        WCFSERVICEFSS.vwTim TimAdd(WCFSERVICEFSS.vwTim tim);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TimAdd", ReplyAction="http://tempuri.org/IService1/TimAddResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwTim> TimAddAsync(WPFFudbal.ServiceReference1.vwTim tim);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwTim> TimAddAsync(WCFSERVICEFSS.vwTim tim);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LigaAdd", ReplyAction="http://tempuri.org/IService1/LigaAddResponse")]
-        WPFFudbal.ServiceReference1.vwLiga LigaAdd(WPFFudbal.ServiceReference1.vwLiga liga);
+        WCFSERVICEFSS.vwLiga LigaAdd(WCFSERVICEFSS.vwLiga liga);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LigaAdd", ReplyAction="http://tempuri.org/IService1/LigaAddResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwLiga> LigaAddAsync(WPFFudbal.ServiceReference1.vwLiga liga);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwLiga> LigaAddAsync(WCFSERVICEFSS.vwLiga liga);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/KategorijaAdd", ReplyAction="http://tempuri.org/IService1/KategorijaAddResponse")]
-        WPFFudbal.ServiceReference1.vwKategorija KategorijaAdd(WPFFudbal.ServiceReference1.vwKategorija kategorija);
+        WCFSERVICEFSS.vwKategorija KategorijaAdd(WCFSERVICEFSS.vwKategorija kategorija);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/KategorijaAdd", ReplyAction="http://tempuri.org/IService1/KategorijaAddResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwKategorija> KategorijaAddAsync(WPFFudbal.ServiceReference1.vwKategorija kategorija);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwKategorija> KategorijaAddAsync(WCFSERVICEFSS.vwKategorija kategorija);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NacionalnostAdd", ReplyAction="http://tempuri.org/IService1/NacionalnostAddResponse")]
-        WPFFudbal.ServiceReference1.vwNacionalnost NacionalnostAdd(WPFFudbal.ServiceReference1.vwNacionalnost nacionalnost);
+        WCFSERVICEFSS.vwNacionalnost NacionalnostAdd(WCFSERVICEFSS.vwNacionalnost nacionalnost);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NacionalnostAdd", ReplyAction="http://tempuri.org/IService1/NacionalnostAddResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwNacionalnost> NacionalnostAddAsync(WPFFudbal.ServiceReference1.vwNacionalnost nacionalnost);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwNacionalnost> NacionalnostAddAsync(WCFSERVICEFSS.vwNacionalnost nacionalnost);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TrenerAdd", ReplyAction="http://tempuri.org/IService1/TrenerAddResponse")]
+        WCFSERVICEFSS.vwTrener TrenerAdd(WCFSERVICEFSS.vwTrener trener);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TrenerAdd", ReplyAction="http://tempuri.org/IService1/TrenerAddResponse")]
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwTrener> TrenerAddAsync(WCFSERVICEFSS.vwTrener trener);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SudijaAdd", ReplyAction="http://tempuri.org/IService1/SudijaAddResponse")]
+        WCFSERVICEFSS.vwSudija SudijaAdd(WCFSERVICEFSS.vwSudija sudija);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SudijaAdd", ReplyAction="http://tempuri.org/IService1/SudijaAddResponse")]
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwSudija> SudijaAddAsync(WCFSERVICEFSS.vwSudija sudija);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IgracBrisanje", ReplyAction="http://tempuri.org/IService1/IgracBrisanjeResponse")]
         void IgracBrisanje(int ID);
@@ -777,35 +129,59 @@ namespace WPFFudbal.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LigaBrisanje", ReplyAction="http://tempuri.org/IService1/LigaBrisanjeResponse")]
         System.Threading.Tasks.Task LigaBrisanjeAsync(int ID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneIgrac", ReplyAction="http://tempuri.org/IService1/GetOneIgracResponse")]
-        WPFFudbal.ServiceReference1.vwIgrac GetOneIgrac(int ID);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TrenerBrisanje", ReplyAction="http://tempuri.org/IService1/TrenerBrisanjeResponse")]
+        void TrenerBrisanje(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TrenerBrisanje", ReplyAction="http://tempuri.org/IService1/TrenerBrisanjeResponse")]
+        System.Threading.Tasks.Task TrenerBrisanjeAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SudijaBrisanje", ReplyAction="http://tempuri.org/IService1/SudijaBrisanjeResponse")]
+        void SudijaBrisanje(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SudijaBrisanje", ReplyAction="http://tempuri.org/IService1/SudijaBrisanjeResponse")]
+        System.Threading.Tasks.Task SudijaBrisanjeAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneIgrac", ReplyAction="http://tempuri.org/IService1/GetOneIgracResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwIgrac> GetOneIgracAsync(int ID);
+        WCFSERVICEFSS.vwIgrac GetOneIgrac(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneIgrac", ReplyAction="http://tempuri.org/IService1/GetOneIgracResponse")]
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwIgrac> GetOneIgracAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneKategorija", ReplyAction="http://tempuri.org/IService1/GetOneKategorijaResponse")]
-        WPFFudbal.ServiceReference1.vwKategorija GetOneKategorija(int ID);
+        WCFSERVICEFSS.vwKategorija GetOneKategorija(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneKategorija", ReplyAction="http://tempuri.org/IService1/GetOneKategorijaResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwKategorija> GetOneKategorijaAsync(int ID);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwKategorija> GetOneKategorijaAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneliga", ReplyAction="http://tempuri.org/IService1/GetOneligaResponse")]
-        WPFFudbal.ServiceReference1.vwLiga GetOneliga(int ID);
+        WCFSERVICEFSS.vwLiga GetOneliga(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneliga", ReplyAction="http://tempuri.org/IService1/GetOneligaResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwLiga> GetOneligaAsync(int ID);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwLiga> GetOneligaAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneNacionalnost", ReplyAction="http://tempuri.org/IService1/GetOneNacionalnostResponse")]
-        WPFFudbal.ServiceReference1.vwNacionalnost GetOneNacionalnost(int ID);
+        WCFSERVICEFSS.vwNacionalnost GetOneNacionalnost(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneNacionalnost", ReplyAction="http://tempuri.org/IService1/GetOneNacionalnostResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwNacionalnost> GetOneNacionalnostAsync(int ID);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwNacionalnost> GetOneNacionalnostAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneTim", ReplyAction="http://tempuri.org/IService1/GetOneTimResponse")]
-        WPFFudbal.ServiceReference1.vwTim GetOneTim(int ID);
+        WCFSERVICEFSS.vwTim GetOneTim(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneTim", ReplyAction="http://tempuri.org/IService1/GetOneTimResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwTim> GetOneTimAsync(int ID);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwTim> GetOneTimAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneTrener", ReplyAction="http://tempuri.org/IService1/GetOneTrenerResponse")]
+        WCFSERVICEFSS.vwTrener GetOneTrener(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneTrener", ReplyAction="http://tempuri.org/IService1/GetOneTrenerResponse")]
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwTrener> GetOneTrenerAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneSudija", ReplyAction="http://tempuri.org/IService1/GetOneSudijaResponse")]
+        WCFSERVICEFSS.vwSudija GetOneSudija(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOneSudija", ReplyAction="http://tempuri.org/IService1/GetOneSudijaResponse")]
+        System.Threading.Tasks.Task<WCFSERVICEFSS.vwSudija> GetOneSudijaAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         string GetData(int value);
@@ -814,10 +190,10 @@ namespace WPFFudbal.ServiceReference1 {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        WPFFudbal.ServiceReference1.CompositeType GetDataUsingDataContract(WPFFudbal.ServiceReference1.CompositeType composite);
+        WCFSERVICEFSS.CompositeType GetDataUsingDataContract(WCFSERVICEFSS.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(WPFFudbal.ServiceReference1.CompositeType composite);
+        System.Threading.Tasks.Task<WCFSERVICEFSS.CompositeType> GetDataUsingDataContractAsync(WCFSERVICEFSS.CompositeType composite);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -847,84 +223,116 @@ namespace WPFFudbal.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public WPFFudbal.ServiceReference1.vwIgrac[] IgracList() {
+        public WCFSERVICEFSS.vwIgrac[] IgracList() {
             return base.Channel.IgracList();
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwIgrac[]> IgracListAsync() {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwIgrac[]> IgracListAsync() {
             return base.Channel.IgracListAsync();
         }
         
-        public WPFFudbal.ServiceReference1.vwTim[] TimList() {
+        public WCFSERVICEFSS.vwTim[] TimList() {
             return base.Channel.TimList();
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwTim[]> TimListAsync() {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwTim[]> TimListAsync() {
             return base.Channel.TimListAsync();
         }
         
-        public WPFFudbal.ServiceReference1.vwLiga[] LigaList() {
+        public WCFSERVICEFSS.vwLiga[] LigaList() {
             return base.Channel.LigaList();
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwLiga[]> LigaListAsync() {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwLiga[]> LigaListAsync() {
             return base.Channel.LigaListAsync();
         }
         
-        public WPFFudbal.ServiceReference1.vwKategorija[] KategorijaList() {
+        public WCFSERVICEFSS.vwKategorija[] KategorijaList() {
             return base.Channel.KategorijaList();
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwKategorija[]> KategorijaListAsync() {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwKategorija[]> KategorijaListAsync() {
             return base.Channel.KategorijaListAsync();
         }
         
-        public WPFFudbal.ServiceReference1.vwNacionalnost[] NacionalnostList() {
+        public WCFSERVICEFSS.vwNacionalnost[] NacionalnostList() {
             return base.Channel.NacionalnostList();
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwNacionalnost[]> NacionalnostListAsync() {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwNacionalnost[]> NacionalnostListAsync() {
             return base.Channel.NacionalnostListAsync();
         }
         
-        public WPFFudbal.ServiceReference1.vwIgrac IgracAdd(WPFFudbal.ServiceReference1.vwIgrac igrac) {
+        public WCFSERVICEFSS.vwTrener[] TrenerList() {
+            return base.Channel.TrenerList();
+        }
+        
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwTrener[]> TrenerListAsync() {
+            return base.Channel.TrenerListAsync();
+        }
+        
+        public WCFSERVICEFSS.vwSudija[] SudijaList() {
+            return base.Channel.SudijaList();
+        }
+        
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwSudija[]> SudijaListAsync() {
+            return base.Channel.SudijaListAsync();
+        }
+        
+        public WCFSERVICEFSS.vwIgrac IgracAdd(WCFSERVICEFSS.vwIgrac igrac) {
             return base.Channel.IgracAdd(igrac);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwIgrac> IgracAddAsync(WPFFudbal.ServiceReference1.vwIgrac igrac) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwIgrac> IgracAddAsync(WCFSERVICEFSS.vwIgrac igrac) {
             return base.Channel.IgracAddAsync(igrac);
         }
         
-        public WPFFudbal.ServiceReference1.vwTim TimAdd(WPFFudbal.ServiceReference1.vwTim tim) {
+        public WCFSERVICEFSS.vwTim TimAdd(WCFSERVICEFSS.vwTim tim) {
             return base.Channel.TimAdd(tim);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwTim> TimAddAsync(WPFFudbal.ServiceReference1.vwTim tim) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwTim> TimAddAsync(WCFSERVICEFSS.vwTim tim) {
             return base.Channel.TimAddAsync(tim);
         }
         
-        public WPFFudbal.ServiceReference1.vwLiga LigaAdd(WPFFudbal.ServiceReference1.vwLiga liga) {
+        public WCFSERVICEFSS.vwLiga LigaAdd(WCFSERVICEFSS.vwLiga liga) {
             return base.Channel.LigaAdd(liga);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwLiga> LigaAddAsync(WPFFudbal.ServiceReference1.vwLiga liga) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwLiga> LigaAddAsync(WCFSERVICEFSS.vwLiga liga) {
             return base.Channel.LigaAddAsync(liga);
         }
         
-        public WPFFudbal.ServiceReference1.vwKategorija KategorijaAdd(WPFFudbal.ServiceReference1.vwKategorija kategorija) {
+        public WCFSERVICEFSS.vwKategorija KategorijaAdd(WCFSERVICEFSS.vwKategorija kategorija) {
             return base.Channel.KategorijaAdd(kategorija);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwKategorija> KategorijaAddAsync(WPFFudbal.ServiceReference1.vwKategorija kategorija) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwKategorija> KategorijaAddAsync(WCFSERVICEFSS.vwKategorija kategorija) {
             return base.Channel.KategorijaAddAsync(kategorija);
         }
         
-        public WPFFudbal.ServiceReference1.vwNacionalnost NacionalnostAdd(WPFFudbal.ServiceReference1.vwNacionalnost nacionalnost) {
+        public WCFSERVICEFSS.vwNacionalnost NacionalnostAdd(WCFSERVICEFSS.vwNacionalnost nacionalnost) {
             return base.Channel.NacionalnostAdd(nacionalnost);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwNacionalnost> NacionalnostAddAsync(WPFFudbal.ServiceReference1.vwNacionalnost nacionalnost) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwNacionalnost> NacionalnostAddAsync(WCFSERVICEFSS.vwNacionalnost nacionalnost) {
             return base.Channel.NacionalnostAddAsync(nacionalnost);
+        }
+        
+        public WCFSERVICEFSS.vwTrener TrenerAdd(WCFSERVICEFSS.vwTrener trener) {
+            return base.Channel.TrenerAdd(trener);
+        }
+        
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwTrener> TrenerAddAsync(WCFSERVICEFSS.vwTrener trener) {
+            return base.Channel.TrenerAddAsync(trener);
+        }
+        
+        public WCFSERVICEFSS.vwSudija SudijaAdd(WCFSERVICEFSS.vwSudija sudija) {
+            return base.Channel.SudijaAdd(sudija);
+        }
+        
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwSudija> SudijaAddAsync(WCFSERVICEFSS.vwSudija sudija) {
+            return base.Channel.SudijaAddAsync(sudija);
         }
         
         public void IgracBrisanje(int ID) {
@@ -967,44 +375,76 @@ namespace WPFFudbal.ServiceReference1 {
             return base.Channel.LigaBrisanjeAsync(ID);
         }
         
-        public WPFFudbal.ServiceReference1.vwIgrac GetOneIgrac(int ID) {
+        public void TrenerBrisanje(int ID) {
+            base.Channel.TrenerBrisanje(ID);
+        }
+        
+        public System.Threading.Tasks.Task TrenerBrisanjeAsync(int ID) {
+            return base.Channel.TrenerBrisanjeAsync(ID);
+        }
+        
+        public void SudijaBrisanje(int ID) {
+            base.Channel.SudijaBrisanje(ID);
+        }
+        
+        public System.Threading.Tasks.Task SudijaBrisanjeAsync(int ID) {
+            return base.Channel.SudijaBrisanjeAsync(ID);
+        }
+        
+        public WCFSERVICEFSS.vwIgrac GetOneIgrac(int ID) {
             return base.Channel.GetOneIgrac(ID);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwIgrac> GetOneIgracAsync(int ID) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwIgrac> GetOneIgracAsync(int ID) {
             return base.Channel.GetOneIgracAsync(ID);
         }
         
-        public WPFFudbal.ServiceReference1.vwKategorija GetOneKategorija(int ID) {
+        public WCFSERVICEFSS.vwKategorija GetOneKategorija(int ID) {
             return base.Channel.GetOneKategorija(ID);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwKategorija> GetOneKategorijaAsync(int ID) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwKategorija> GetOneKategorijaAsync(int ID) {
             return base.Channel.GetOneKategorijaAsync(ID);
         }
         
-        public WPFFudbal.ServiceReference1.vwLiga GetOneliga(int ID) {
+        public WCFSERVICEFSS.vwLiga GetOneliga(int ID) {
             return base.Channel.GetOneliga(ID);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwLiga> GetOneligaAsync(int ID) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwLiga> GetOneligaAsync(int ID) {
             return base.Channel.GetOneligaAsync(ID);
         }
         
-        public WPFFudbal.ServiceReference1.vwNacionalnost GetOneNacionalnost(int ID) {
+        public WCFSERVICEFSS.vwNacionalnost GetOneNacionalnost(int ID) {
             return base.Channel.GetOneNacionalnost(ID);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwNacionalnost> GetOneNacionalnostAsync(int ID) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwNacionalnost> GetOneNacionalnostAsync(int ID) {
             return base.Channel.GetOneNacionalnostAsync(ID);
         }
         
-        public WPFFudbal.ServiceReference1.vwTim GetOneTim(int ID) {
+        public WCFSERVICEFSS.vwTim GetOneTim(int ID) {
             return base.Channel.GetOneTim(ID);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.vwTim> GetOneTimAsync(int ID) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwTim> GetOneTimAsync(int ID) {
             return base.Channel.GetOneTimAsync(ID);
+        }
+        
+        public WCFSERVICEFSS.vwTrener GetOneTrener(int ID) {
+            return base.Channel.GetOneTrener(ID);
+        }
+        
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwTrener> GetOneTrenerAsync(int ID) {
+            return base.Channel.GetOneTrenerAsync(ID);
+        }
+        
+        public WCFSERVICEFSS.vwSudija GetOneSudija(int ID) {
+            return base.Channel.GetOneSudija(ID);
+        }
+        
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.vwSudija> GetOneSudijaAsync(int ID) {
+            return base.Channel.GetOneSudijaAsync(ID);
         }
         
         public string GetData(int value) {
@@ -1015,11 +455,11 @@ namespace WPFFudbal.ServiceReference1 {
             return base.Channel.GetDataAsync(value);
         }
         
-        public WPFFudbal.ServiceReference1.CompositeType GetDataUsingDataContract(WPFFudbal.ServiceReference1.CompositeType composite) {
+        public WCFSERVICEFSS.CompositeType GetDataUsingDataContract(WCFSERVICEFSS.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<WPFFudbal.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(WPFFudbal.ServiceReference1.CompositeType composite) {
+        public System.Threading.Tasks.Task<WCFSERVICEFSS.CompositeType> GetDataUsingDataContractAsync(WCFSERVICEFSS.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
     }

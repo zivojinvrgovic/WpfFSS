@@ -31,6 +31,7 @@
     <Property Name="rang" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tblKategorija" Relationship="Self.FK_tblLiga_tblKategorija" FromRole="tblLiga" ToRole="tblKategorija" />
     <NavigationProperty Name="tblTims" Relationship="Self.FK_tblTim_tblLiga" FromRole="tblLiga" ToRole="tblTim" />
+    <NavigationProperty Name="tblSudijas" Relationship="FSSModel.FK_tblSudija_tblSudija" FromRole="tblLiga" ToRole="tblSudija" />
   </EntityType>
   <EntityType Name="tblNacionalnost">
     <Key>
@@ -52,6 +53,7 @@
     <Property Name="liga" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tblIgracs" Relationship="Self.FK_tblIgrac_tblTim" FromRole="tblTim" ToRole="tblIgrac" />
     <NavigationProperty Name="tblLiga" Relationship="Self.FK_tblTim_tblLiga" FromRole="tblTim" ToRole="tblLiga" />
+    <NavigationProperty Name="tblTreners" Relationship="FSSModel.FK_tblTrener_tblTim" FromRole="tblTim" ToRole="tblTrener" />
   </EntityType>
   <EntityType Name="vwIgrac">
     <Key>
@@ -205,5 +207,85 @@
       <End Role="tblLiga" EntitySet="tblLigas" />
       <End Role="tblTim" EntitySet="tblTims" />
     </AssociationSet>
+    <EntitySet Name="tblSudijas" EntityType="FSSModel.tblSudija" />
+    <EntitySet Name="tblTreners" EntityType="FSSModel.tblTrener" />
+    <EntitySet Name="vwSudijas" EntityType="FSSModel.vwSudija" />
+    <EntitySet Name="vwTreners" EntityType="FSSModel.vwTrener" />
+    <AssociationSet Name="FK_tblSudija_tblSudija" Association="FSSModel.FK_tblSudija_tblSudija">
+      <End Role="tblLiga" EntitySet="tblLigas" />
+      <End Role="tblSudija" EntitySet="tblSudijas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTrener_tblTim" Association="FSSModel.FK_tblTrener_tblTim">
+      <End Role="tblTim" EntitySet="tblTims" />
+      <End Role="tblTrener" EntitySet="tblTreners" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="tblSudija">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="liga" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblLiga" Relationship="FSSModel.FK_tblSudija_tblSudija" FromRole="tblSudija" ToRole="tblLiga" />
+  </EntityType>
+  <EntityType Name="tblTrener">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tim" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblTim" Relationship="FSSModel.FK_tblTrener_tblTim" FromRole="tblTrener" ToRole="tblTim" />
+  </EntityType>
+  <EntityType Name="vwSudija">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ime" />
+      <PropertyRef Name="prezime" />
+      <PropertyRef Name="liga" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="liga" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwTrener">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ime" />
+      <PropertyRef Name="prezime" />
+      <PropertyRef Name="tim" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tim" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblSudija_tblSudija">
+    <End Type="FSSModel.tblLiga" Role="tblLiga" Multiplicity="1" />
+    <End Type="FSSModel.tblSudija" Role="tblSudija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLiga">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblSudija">
+        <PropertyRef Name="liga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTrener_tblTim">
+    <End Type="FSSModel.tblTim" Role="tblTim" Multiplicity="1" />
+    <End Type="FSSModel.tblTrener" Role="tblTrener" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTim">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblTrener">
+        <PropertyRef Name="tim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

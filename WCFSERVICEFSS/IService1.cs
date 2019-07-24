@@ -23,6 +23,10 @@ namespace WCFSERVICEFSS
         List<vwKategorija> KategorijaList();
         [OperationContract]
         List<vwNacionalnost> NacionalnostList();
+        [OperationContract]
+        List<vwTrener> TrenerList();
+        [OperationContract]
+        List<vwSudija> SudijaList();
 
         //ADD
         [OperationContract]
@@ -35,6 +39,11 @@ namespace WCFSERVICEFSS
         vwKategorija KategorijaAdd(vwKategorija kategorija);
         [OperationContract]
         vwNacionalnost NacionalnostAdd(vwNacionalnost nacionalnost);
+        [OperationContract]
+        vwTrener TrenerAdd(vwTrener trener);
+        [OperationContract]
+        vwSudija SudijaAdd(vwSudija sudija);
+
 
         //DELETE
         [OperationContract]
@@ -47,6 +56,10 @@ namespace WCFSERVICEFSS
         void NacionalnostBrisanje(int ID);
         [OperationContract]
         void LigaBrisanje(int ID);
+        [OperationContract]
+        void TrenerBrisanje(int ID);
+        [OperationContract]
+        void SudijaBrisanje(int ID);
 
         //GET ONE 
         [OperationContract]
@@ -59,6 +72,10 @@ namespace WCFSERVICEFSS
         vwNacionalnost GetOneNacionalnost(int ID);
         [OperationContract]
         vwTim GetOneTim(int ID);
+        [OperationContract]
+        vwTrener GetOneTrener(int ID);
+        [OperationContract]
+        vwSudija GetOneSudija(int ID);
 
         [OperationContract]
         string GetData(int value);

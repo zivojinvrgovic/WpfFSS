@@ -37,6 +37,18 @@
   <wsdl:message name="IService1_NacionalnostList_OutputMessage">
     <wsdl:part name="parameters" element="tns:NacionalnostListResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_TrenerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:TrenerList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TrenerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrenerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SudijaList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SudijaList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SudijaList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SudijaListResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_IgracAdd_InputMessage">
     <wsdl:part name="parameters" element="tns:IgracAdd" />
   </wsdl:message>
@@ -66,6 +78,18 @@
   </wsdl:message>
   <wsdl:message name="IService1_NacionalnostAdd_OutputMessage">
     <wsdl:part name="parameters" element="tns:NacionalnostAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TrenerAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:TrenerAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TrenerAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrenerAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SudijaAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:SudijaAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SudijaAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SudijaAddResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_IgracBrisanje_InputMessage">
     <wsdl:part name="parameters" element="tns:IgracBrisanje" />
@@ -97,6 +121,18 @@
   <wsdl:message name="IService1_LigaBrisanje_OutputMessage">
     <wsdl:part name="parameters" element="tns:LigaBrisanjeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_TrenerBrisanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:TrenerBrisanje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TrenerBrisanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrenerBrisanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SudijaBrisanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:SudijaBrisanje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SudijaBrisanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SudijaBrisanjeResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetOneIgrac_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOneIgrac" />
   </wsdl:message>
@@ -126,6 +162,18 @@
   </wsdl:message>
   <wsdl:message name="IService1_GetOneTim_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOneTimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneTrener_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneTrener" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneTrener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneTrenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneSudija_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneSudija" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneSudija_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneSudijaResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
@@ -160,6 +208,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/NacionalnostList" message="tns:IService1_NacionalnostList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/NacionalnostListResponse" message="tns:IService1_NacionalnostList_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="TrenerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TrenerList" message="tns:IService1_TrenerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TrenerListResponse" message="tns:IService1_TrenerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SudijaList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SudijaList" message="tns:IService1_SudijaList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SudijaListResponse" message="tns:IService1_SudijaList_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="IgracAdd">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IgracAdd" message="tns:IService1_IgracAdd_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/IgracAddResponse" message="tns:IService1_IgracAdd_OutputMessage" />
@@ -179,6 +235,14 @@
     <wsdl:operation name="NacionalnostAdd">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/NacionalnostAdd" message="tns:IService1_NacionalnostAdd_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/NacionalnostAddResponse" message="tns:IService1_NacionalnostAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TrenerAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TrenerAdd" message="tns:IService1_TrenerAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TrenerAddResponse" message="tns:IService1_TrenerAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SudijaAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SudijaAdd" message="tns:IService1_SudijaAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SudijaAddResponse" message="tns:IService1_SudijaAdd_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="IgracBrisanje">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IgracBrisanje" message="tns:IService1_IgracBrisanje_InputMessage" />
@@ -200,6 +264,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LigaBrisanje" message="tns:IService1_LigaBrisanje_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LigaBrisanjeResponse" message="tns:IService1_LigaBrisanje_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="TrenerBrisanje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TrenerBrisanje" message="tns:IService1_TrenerBrisanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TrenerBrisanjeResponse" message="tns:IService1_TrenerBrisanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SudijaBrisanje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SudijaBrisanje" message="tns:IService1_SudijaBrisanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SudijaBrisanjeResponse" message="tns:IService1_SudijaBrisanje_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetOneIgrac">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneIgrac" message="tns:IService1_GetOneIgrac_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneIgracResponse" message="tns:IService1_GetOneIgrac_OutputMessage" />
@@ -219,6 +291,14 @@
     <wsdl:operation name="GetOneTim">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneTim" message="tns:IService1_GetOneTim_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneTimResponse" message="tns:IService1_GetOneTim_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneTrener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneTrener" message="tns:IService1_GetOneTrener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneTrenerResponse" message="tns:IService1_GetOneTrener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneSudija">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneSudija" message="tns:IService1_GetOneSudija_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneSudijaResponse" message="tns:IService1_GetOneSudija_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -276,6 +356,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TrenerList">
+      <soap:operation soapAction="http://tempuri.org/IService1/TrenerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SudijaList">
+      <soap:operation soapAction="http://tempuri.org/IService1/SudijaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="IgracAdd">
       <soap:operation soapAction="http://tempuri.org/IService1/IgracAdd" style="document" />
       <wsdl:input>
@@ -314,6 +412,24 @@
     </wsdl:operation>
     <wsdl:operation name="NacionalnostAdd">
       <soap:operation soapAction="http://tempuri.org/IService1/NacionalnostAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrenerAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/TrenerAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SudijaAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/SudijaAdd" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -366,6 +482,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TrenerBrisanje">
+      <soap:operation soapAction="http://tempuri.org/IService1/TrenerBrisanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SudijaBrisanje">
+      <soap:operation soapAction="http://tempuri.org/IService1/SudijaBrisanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetOneIgrac">
       <soap:operation soapAction="http://tempuri.org/IService1/GetOneIgrac" style="document" />
       <wsdl:input>
@@ -404,6 +538,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetOneTim">
       <soap:operation soapAction="http://tempuri.org/IService1/GetOneTim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneTrener">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOneTrener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneSudija">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOneSudija" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

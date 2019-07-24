@@ -19,6 +19,12 @@
         <AssociationConnector Association="FSSModel.FK_tblIgrac_tblTim" ManuallyRouted="false" />
         <AssociationConnector Association="FSSModel.FK_tblLiga_tblKategorija" ManuallyRouted="false" />
         <AssociationConnector Association="FSSModel.FK_tblTim_tblLiga" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FSSModel.tblSudija" Width="1.5" PointX="5.25" PointY="8.625" />
+        <EntityTypeShape EntityType="FSSModel.tblTrener" Width="1.5" PointX="7.5" PointY="11.25" />
+        <EntityTypeShape EntityType="FSSModel.vwSudija" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FSSModel.vwTrener" Width="1.5" PointX="10.375" PointY="3.75" />
+        <AssociationConnector Association="FSSModel.FK_tblSudija_tblSudija" />
+        <AssociationConnector Association="FSSModel.FK_tblTrener_tblTim" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

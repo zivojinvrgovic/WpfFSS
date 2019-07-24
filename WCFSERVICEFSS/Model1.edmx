@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FSSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FSSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblIgrac">
           <Key>
             <PropertyRef Name="ID" />
@@ -40,6 +40,15 @@
           <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="skracenica" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
+        <EntityType Name="tblSudija">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="liga" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblTim">
           <Key>
             <PropertyRef Name="ID" />
@@ -49,6 +58,15 @@
           <Property Name="sediste" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="osnovan" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="liga" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTrener">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tim" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'FSS.dbo.vwIgrac' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -120,6 +138,20 @@ warning 6002: The table/view 'FSS.dbo.vwNacionalnost' does not have a primary ke
           <Property Name="Expr3" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwSudija' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwSudija">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="liga" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="liga" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwTim">
           <Key>
@@ -136,6 +168,20 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
           <Property Name="osnovan" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="liga" Type="int" Nullable="false" />
           <Property Name="nazLige" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwTrener">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="tim" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tim" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_tblIgrac_tblNacionalnost">
           <End Role="tblNacionalnost" Type="Self.tblNacionalnost" Multiplicity="1" />
@@ -173,6 +219,18 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tblSudija_tblSudija">
+          <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="1" />
+          <End Role="tblSudija" Type="Self.tblSudija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLiga">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSudija">
+              <PropertyRef Name="liga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblTim_tblLiga">
           <End Role="tblLiga" Type="Self.tblLiga" Multiplicity="1" />
           <End Role="tblTim" Type="Self.tblTim" Multiplicity="*" />
@@ -185,12 +243,26 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tblTrener_tblTim">
+          <End Role="tblTim" Type="Self.tblTim" Multiplicity="1" />
+          <End Role="tblTrener" Type="Self.tblTrener" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTim">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTrener">
+              <PropertyRef Name="tim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="FSSModelStoreContainer">
           <EntitySet Name="tblIgrac" EntityType="Self.tblIgrac" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblKategorija" EntityType="Self.tblKategorija" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblLiga" EntityType="Self.tblLiga" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblNacionalnost" EntityType="Self.tblNacionalnost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSudija" EntityType="Self.tblSudija" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblTim" EntityType="Self.tblTim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTrener" EntityType="Self.tblTrener" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vwIgrac" EntityType="Self.vwIgrac" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vwIgrac].[ID] AS [ID], 
@@ -230,6 +302,14 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
     [vwNacionalnost].[Expr3] AS [Expr3]
     FROM [dbo].[vwNacionalnost] AS [vwNacionalnost]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vwSudija" EntityType="Self.vwSudija" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwSudija].[ID] AS [ID], 
+    [vwSudija].[ime] AS [ime], 
+    [vwSudija].[prezime] AS [prezime], 
+    [vwSudija].[liga] AS [liga]
+    FROM [dbo].[vwSudija] AS [vwSudija]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vwTim" EntityType="Self.vwTim" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vwTim].[ID] AS [ID], 
@@ -239,6 +319,14 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
     [vwTim].[liga] AS [liga], 
     [vwTim].[nazLige] AS [nazLige]
     FROM [dbo].[vwTim] AS [vwTim]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTrener" EntityType="Self.vwTrener" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwTrener].[ID] AS [ID], 
+    [vwTrener].[ime] AS [ime], 
+    [vwTrener].[prezime] AS [prezime], 
+    [vwTrener].[tim] AS [tim]
+    FROM [dbo].[vwTrener] AS [vwTrener]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_tblIgrac_tblNacionalnost" Association="Self.FK_tblIgrac_tblNacionalnost">
             <End Role="tblNacionalnost" EntitySet="tblNacionalnost" />
@@ -252,13 +340,20 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
             <End Role="tblKategorija" EntitySet="tblKategorija" />
             <End Role="tblLiga" EntitySet="tblLiga" />
           </AssociationSet>
+          <AssociationSet Name="FK_tblSudija_tblSudija" Association="Self.FK_tblSudija_tblSudija">
+            <End Role="tblLiga" EntitySet="tblLiga" />
+            <End Role="tblSudija" EntitySet="tblSudija" />
+          </AssociationSet>
           <AssociationSet Name="FK_tblTim_tblLiga" Association="Self.FK_tblTim_tblLiga">
             <End Role="tblLiga" EntitySet="tblLiga" />
             <End Role="tblTim" EntitySet="tblTim" />
           </AssociationSet>
+          <AssociationSet Name="FK_tblTrener_tblTim" Association="Self.FK_tblTrener_tblTim">
+            <End Role="tblTim" EntitySet="tblTim" />
+            <End Role="tblTrener" EntitySet="tblTrener" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FSSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -293,6 +388,7 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
           <Property Name="rang" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblKategorija" Relationship="Self.FK_tblLiga_tblKategorija" FromRole="tblLiga" ToRole="tblKategorija" />
           <NavigationProperty Name="tblTims" Relationship="Self.FK_tblTim_tblLiga" FromRole="tblLiga" ToRole="tblTim" />
+          <NavigationProperty Name="tblSudijas" Relationship="FSSModel.FK_tblSudija_tblSudija" FromRole="tblLiga" ToRole="tblSudija" />
         </EntityType>
         <EntityType Name="tblNacionalnost">
           <Key>
@@ -314,6 +410,7 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
           <Property Name="liga" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblIgracs" Relationship="Self.FK_tblIgrac_tblTim" FromRole="tblTim" ToRole="tblIgrac" />
           <NavigationProperty Name="tblLiga" Relationship="Self.FK_tblTim_tblLiga" FromRole="tblTim" ToRole="tblLiga" />
+          <NavigationProperty Name="tblTreners" Relationship="FSSModel.FK_tblTrener_tblTim" FromRole="tblTim" ToRole="tblTrener" />
         </EntityType>
         <EntityType Name="vwIgrac">
           <Key>
@@ -467,7 +564,87 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
             <End Role="tblLiga" EntitySet="tblLigas" />
             <End Role="tblTim" EntitySet="tblTims" />
           </AssociationSet>
+          <EntitySet Name="tblSudijas" EntityType="FSSModel.tblSudija" />
+          <EntitySet Name="tblTreners" EntityType="FSSModel.tblTrener" />
+          <EntitySet Name="vwSudijas" EntityType="FSSModel.vwSudija" />
+          <EntitySet Name="vwTreners" EntityType="FSSModel.vwTrener" />
+          <AssociationSet Name="FK_tblSudija_tblSudija" Association="FSSModel.FK_tblSudija_tblSudija">
+            <End Role="tblLiga" EntitySet="tblLigas" />
+            <End Role="tblSudija" EntitySet="tblSudijas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTrener_tblTim" Association="FSSModel.FK_tblTrener_tblTim">
+            <End Role="tblTim" EntitySet="tblTims" />
+            <End Role="tblTrener" EntitySet="tblTreners" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="tblSudija">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="liga" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblLiga" Relationship="FSSModel.FK_tblSudija_tblSudija" FromRole="tblSudija" ToRole="tblLiga" />
+        </EntityType>
+        <EntityType Name="tblTrener">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tim" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblTim" Relationship="FSSModel.FK_tblTrener_tblTim" FromRole="tblTrener" ToRole="tblTim" />
+        </EntityType>
+        <EntityType Name="vwSudija">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="liga" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="liga" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwTrener">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ime" />
+            <PropertyRef Name="prezime" />
+            <PropertyRef Name="tim" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tim" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tblSudija_tblSudija">
+          <End Type="FSSModel.tblLiga" Role="tblLiga" Multiplicity="1" />
+          <End Type="FSSModel.tblSudija" Role="tblSudija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLiga">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSudija">
+              <PropertyRef Name="liga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTrener_tblTim">
+          <End Type="FSSModel.tblTim" Role="tblTim" Multiplicity="1" />
+          <End Type="FSSModel.tblTrener" Role="tblTrener" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTim">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblTrener">
+              <PropertyRef Name="tim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -580,6 +757,46 @@ warning 6002: The table/view 'FSS.dbo.vwTim' does not have a primary key defined
                 <ScalarProperty Name="osnovan" ColumnName="osnovan" />
                 <ScalarProperty Name="liga" ColumnName="liga" />
                 <ScalarProperty Name="nazLige" ColumnName="nazLige" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSudijas">
+            <EntityTypeMapping TypeName="FSSModel.tblSudija">
+              <MappingFragment StoreEntitySet="tblSudija">
+                <ScalarProperty Name="liga" ColumnName="liga" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTreners">
+            <EntityTypeMapping TypeName="FSSModel.tblTrener">
+              <MappingFragment StoreEntitySet="tblTrener">
+                <ScalarProperty Name="tim" ColumnName="tim" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwSudijas">
+            <EntityTypeMapping TypeName="FSSModel.vwSudija">
+              <MappingFragment StoreEntitySet="vwSudija">
+                <ScalarProperty Name="liga" ColumnName="liga" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwTreners">
+            <EntityTypeMapping TypeName="FSSModel.vwTrener">
+              <MappingFragment StoreEntitySet="vwTrener">
+                <ScalarProperty Name="tim" ColumnName="tim" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

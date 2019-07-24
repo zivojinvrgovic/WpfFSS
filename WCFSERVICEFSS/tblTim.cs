@@ -18,6 +18,7 @@ namespace WCFSERVICEFSS
         public tblTim()
         {
             this.tblIgracs = new HashSet<tblIgrac>();
+            this.tblTreners = new HashSet<tblTrener>();
         }
     
         public int ID { get; set; }
@@ -29,5 +30,7 @@ namespace WCFSERVICEFSS
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblIgrac> tblIgracs { get; set; }
         public virtual tblLiga tblLiga { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblTrener> tblTreners { get; set; }
     }
 }

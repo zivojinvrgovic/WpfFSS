@@ -110,5 +110,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblSudijas">
+      <EntityTypeMapping TypeName="FSSModel.tblSudija">
+        <MappingFragment StoreEntitySet="tblSudija">
+          <ScalarProperty Name="liga" ColumnName="liga" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTreners">
+      <EntityTypeMapping TypeName="FSSModel.tblTrener">
+        <MappingFragment StoreEntitySet="tblTrener">
+          <ScalarProperty Name="tim" ColumnName="tim" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwSudijas">
+      <EntityTypeMapping TypeName="FSSModel.vwSudija">
+        <MappingFragment StoreEntitySet="vwSudija">
+          <ScalarProperty Name="liga" ColumnName="liga" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwTreners">
+      <EntityTypeMapping TypeName="FSSModel.vwTrener">
+        <MappingFragment StoreEntitySet="vwTrener">
+          <ScalarProperty Name="tim" ColumnName="tim" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
