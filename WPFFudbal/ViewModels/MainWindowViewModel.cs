@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 using WCFSERVICEFSS;
 using WPFFudbal.Commands;
@@ -673,7 +674,22 @@ namespace WPFFudbal.ViewModels
 
         private void ExecuteSwapCoumns()
         {
-            
+            //DataGridViewColumnCollection columnCollection = main.DataGridIgrac.Columns;
+
+            //DataGridViewColumnCollection firstVisibleColumn =
+            //    columnCollection.GetFirstColumn(DataGridViewElementStates.Visible);
+
+            //DataGridViewColumnCollection columnCollection = dataGridView.Columns;
+
+            //DataGridViewColumn firstVisibleColumn =
+            //    columnCollection.GetFirstColumn(DataGridViewElementStates.Visible);
+            //DataGridViewColumn lastVisibleColumn =
+            //    columnCollection.GetLastColumn(
+            //        DataGridViewElementStates.Visible, DataGridViewElementStates.None);
+
+            //int firstColumn_sIndex = firstVisibleColumn.DisplayIndex;
+            //firstVisibleColumn.DisplayIndex = lastVisibleColumn.DisplayIndex;
+            //lastVisibleColumn.DisplayIndex = firstColumn_sIndex;
         }
 
         private bool CanExecuteSwapColumns()
