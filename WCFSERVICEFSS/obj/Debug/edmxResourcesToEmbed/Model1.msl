@@ -4,6 +4,7 @@
     <EntitySetMapping Name="tblIgracs">
       <EntityTypeMapping TypeName="FSSModel.tblIgrac">
         <MappingFragment StoreEntitySet="tblIgrac">
+          <ScalarProperty Name="cena" ColumnName="cena" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ime" ColumnName="ime" />
           <ScalarProperty Name="prezime" ColumnName="prezime" />
@@ -54,6 +55,7 @@
     <EntitySetMapping Name="vwIgracs">
       <EntityTypeMapping TypeName="FSSModel.vwIgrac">
         <MappingFragment StoreEntitySet="vwIgrac">
+          <ScalarProperty Name="cena" ColumnName="cena" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ime" ColumnName="ime" />
           <ScalarProperty Name="prezime" ColumnName="prezime" />

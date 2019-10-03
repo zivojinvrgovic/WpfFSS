@@ -20,6 +20,7 @@ namespace WCFSERVICEFSS
         public string datum { get; set; }
         public int tim { get; set; }
         public int nacionalnost { get; set; }
+        public Nullable<decimal> cena { get; set; }
     
         public virtual tblNacionalnost tblNacionalnost { get; set; }
         public virtual tblTim tblTim { get; set; }

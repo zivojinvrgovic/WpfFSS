@@ -22,5 +22,6 @@ namespace WCFSERVICEFSS
         public int nacionalnost { get; set; }
         public string nazNac { get; set; }
         public string nazTim { get; set; }
+        public Nullable<decimal> cena { get; set; }
     }
 }

@@ -15,6 +15,7 @@
           <Property Name="datum" Type="varchar" MaxLength="50" />
           <Property Name="tim" Type="int" Nullable="false" />
           <Property Name="nacionalnost" Type="int" Nullable="false" />
+          <Property Name="cena" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="tblKategorija">
           <Key>
@@ -86,6 +87,7 @@ warning 6002: The table/view 'FSS.dbo.vwIgrac' does not have a primary key defin
           <Property Name="datum" Type="varchar" MaxLength="50" />
           <Property Name="tim" Type="int" Nullable="false" />
           <Property Name="nacionalnost" Type="int" Nullable="false" />
+          <Property Name="cena" Type="decimal" Precision="18" Scale="0" />
           <Property Name="nazNac" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="nazTim" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -271,6 +273,7 @@ warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defi
     [vwIgrac].[datum] AS [datum], 
     [vwIgrac].[tim] AS [tim], 
     [vwIgrac].[nacionalnost] AS [nacionalnost], 
+    [vwIgrac].[cena] AS [cena], 
     [vwIgrac].[nazNac] AS [nazNac], 
     [vwIgrac].[nazTim] AS [nazTim]
     FROM [dbo].[vwIgrac] AS [vwIgrac]</DefiningQuery>
@@ -369,6 +372,7 @@ warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defi
           <Property Name="nacionalnost" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblNacionalnost" Relationship="Self.FK_tblIgrac_tblNacionalnost" FromRole="tblIgrac" ToRole="tblNacionalnost" />
           <NavigationProperty Name="tblTim" Relationship="Self.FK_tblIgrac_tblTim" FromRole="tblIgrac" ToRole="tblTim" />
+          <Property Name="cena" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="tblKategorija">
           <Key>
@@ -430,6 +434,7 @@ warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defi
           <Property Name="nacionalnost" Type="Int32" Nullable="false" />
           <Property Name="nazNac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nazTim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cena" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="vwKategorija">
           <Key>
@@ -654,6 +659,7 @@ warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defi
           <EntitySetMapping Name="tblIgracs">
             <EntityTypeMapping TypeName="FSSModel.tblIgrac">
               <MappingFragment StoreEntitySet="tblIgrac">
+                <ScalarProperty Name="cena" ColumnName="cena" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ime" ColumnName="ime" />
                 <ScalarProperty Name="prezime" ColumnName="prezime" />
@@ -704,6 +710,7 @@ warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defi
           <EntitySetMapping Name="vwIgracs">
             <EntityTypeMapping TypeName="FSSModel.vwIgrac">
               <MappingFragment StoreEntitySet="vwIgrac">
+                <ScalarProperty Name="cena" ColumnName="cena" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ime" ColumnName="ime" />
                 <ScalarProperty Name="prezime" ColumnName="prezime" />

@@ -57,6 +57,7 @@
                     <DataGridTextColumn Header="Prezime" Binding="{Binding prezime,UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridTextColumn Header="Nacionalnost" Binding="{Binding nazNac,UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridTextColumn Header="Tim" Binding="{Binding nazTim,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Cena" Binding="{Binding cena,UpdateSourceTrigger=PropertyChanged}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid Name="DataGridTim" ItemsSource="{Binding TimList,UpdateSourceTrigger=PropertyChanged}"
@@ -102,9 +103,9 @@
             <Button Width="120" Height="30" Name="btnDeleteCashRegister" Content="Delete igrac "
                     Visibility="{Binding ViewIgrac, UpdateSourceTrigger=PropertyChanged}"
                     Command="{Binding DeleteIgrac, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
-            <Button Width="120" Height="30" Name="btnSwap" Content="Swap columns "
+            <!--<Button Width="120" Height="30" Name="btnSwap" Content="Swap columns "
                     Visibility="{Binding ViewIgrac, UpdateSourceTrigger=PropertyChanged}"
-                    Command="{Binding SwapColumns, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>
+                    Command="{Binding SwapColumns, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="5" BorderThickness="2"/>-->
         </StackPanel>
 
         <StackPanel Grid.Column="5" Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Margin="6,0.2,0.4,7" Grid.RowSpan="2"

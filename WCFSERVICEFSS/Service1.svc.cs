@@ -39,6 +39,7 @@ namespace WCFSERVICEFSS
                         newIgr.prezime = igrac.prezime;
                         newIgr.nacionalnost = igrac.nacionalnost;
                         newIgr.tim = igrac.tim;
+                        newIgr.cena = igrac.cena;
                         context.tblIgracs.Add(newIgr);
                         context.SaveChanges();
                         igrac.ID = newIgr.ID;
@@ -51,6 +52,7 @@ namespace WCFSERVICEFSS
                         userToEdit.ime = igrac.ime;
                         userToEdit.prezime = igrac.prezime;
                         userToEdit.tim = igrac.tim;
+                        userToEdit.cena = igrac.cena;
                         userToEdit.nacionalnost = igrac.nacionalnost;
                         context.SaveChanges();
                         return igrac;

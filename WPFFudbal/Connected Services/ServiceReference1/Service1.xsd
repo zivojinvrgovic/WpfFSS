@@ -9,6 +9,7 @@
   <xs:complexType name="vwIgrac">
     <xs:sequence>
       <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="cena" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="datum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="nacionalnost" type="xs:int" />

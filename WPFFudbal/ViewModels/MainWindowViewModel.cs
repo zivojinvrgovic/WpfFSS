@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Input;
 using WCFSERVICEFSS;
 using WPFFudbal.Commands;
@@ -24,10 +23,9 @@ namespace WPFFudbal.ViewModels
             main = mainOpen;
             using (Service1Client wcf = new Service1Client())
             {
-                
-                IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList().ToList());
-                TimList = new ObservableCollection<vwTim>(wcf.TimList().ToList());
-                LigaList = new ObservableCollection<vwLiga>(wcf.LigaList().ToList());
+                IgracList = new ObservableCollection<vwIgrac>(wcf.IgracList());
+                TimList = new ObservableCollection<vwTim>(wcf.TimList());
+                LigaList = new ObservableCollection<vwLiga>(wcf.LigaList());
                 
             }
         }

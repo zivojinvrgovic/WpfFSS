@@ -10,6 +10,7 @@
     <Property Name="datum" Type="varchar" MaxLength="50" />
     <Property Name="tim" Type="int" Nullable="false" />
     <Property Name="nacionalnost" Type="int" Nullable="false" />
+    <Property Name="cena" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="tblKategorija">
     <Key>
@@ -81,6 +82,7 @@ warning 6002: The table/view 'FSS.dbo.vwIgrac' does not have a primary key defin
     <Property Name="datum" Type="varchar" MaxLength="50" />
     <Property Name="tim" Type="int" Nullable="false" />
     <Property Name="nacionalnost" Type="int" Nullable="false" />
+    <Property Name="cena" Type="decimal" Precision="18" Scale="0" />
     <Property Name="nazNac" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="nazTim" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
@@ -266,6 +268,7 @@ warning 6002: The table/view 'FSS.dbo.vwTrener' does not have a primary key defi
     [vwIgrac].[datum] AS [datum], 
     [vwIgrac].[tim] AS [tim], 
     [vwIgrac].[nacionalnost] AS [nacionalnost], 
+    [vwIgrac].[cena] AS [cena], 
     [vwIgrac].[nazNac] AS [nazNac], 
     [vwIgrac].[nazTim] AS [nazTim]
     FROM [dbo].[vwIgrac] AS [vwIgrac]</DefiningQuery>
